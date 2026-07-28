@@ -1,0 +1,27 @@
+{
+  "terminalId": "64615854",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": "50026",
+  "machineNo": "23536",
+  "merchantCode": "000812660111790",
+  "assetStatus": "使用中",
+  "warehouseStock": false,
+  "sourceFile": "20260724台新.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

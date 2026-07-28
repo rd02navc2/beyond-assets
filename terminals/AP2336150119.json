@@ -1,0 +1,27 @@
+{
+  "terminalId": "AP2336150119",
+  "category": "POS機",
+  "assetDescription": "AP-3615 POS Terminal",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": null,
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20260724POS.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

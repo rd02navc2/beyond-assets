@@ -1,0 +1,27 @@
+{
+  "terminalId": "64616185",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": "000812660111790",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20260724台新.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

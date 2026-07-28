@@ -1,0 +1,27 @@
+{
+  "terminalId": "0001580601404115",
+  "category": "悠遊卡刷卡機",
+  "assetDescription": "悠遊卡機CMAS",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": null,
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20260724悠遊卡.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

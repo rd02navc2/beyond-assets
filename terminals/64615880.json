@@ -1,0 +1,27 @@
+{
+  "terminalId": "64615880",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": "56120",
+  "machineNo": "23535",
+  "merchantCode": "000812660111790",
+  "assetStatus": "使用中",
+  "warehouseStock": false,
+  "sourceFile": "20260724台新.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

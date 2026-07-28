@@ -1,0 +1,27 @@
+{
+  "terminalId": "64616213",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": "68879",
+  "machineNo": "24619",
+  "merchantCode": "000812660111790",
+  "assetStatus": "使用中",
+  "warehouseStock": false,
+  "sourceFile": "20260724台新.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

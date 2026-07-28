@@ -1,0 +1,27 @@
+{
+  "terminalId": "64615936",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": "21123",
+  "machineNo": "12202",
+  "merchantCode": "000812660111790",
+  "assetStatus": "使用中",
+  "warehouseStock": false,
+  "sourceFile": "20260724台新.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}

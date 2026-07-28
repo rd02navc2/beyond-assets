@@ -1,0 +1,27 @@
+{
+  "terminalId": "64615947",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": "30001",
+  "machineNo": "12308",
+  "merchantCode": "000812660111790",
+  "assetStatus": "使用中",
+  "warehouseStock": false,
+  "sourceFile": "20260724台新.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
+        }
+      ],
+      "remark": "",
+      "commitId": ""
+    }
+  ]
+}
