@@ -10,17 +10,22 @@
   "sourceFile": "20260724悠遊卡.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
-      "operator": "",
-      "action": "",
+      "date": "2026-07-28",
+      "operator": "davidchung",
+      "action": "test",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "test"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "test"
         }
       ],
-      "remark": "",
+      "remark": "test",
       "commitId": ""
     }
   ]
