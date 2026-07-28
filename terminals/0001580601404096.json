@@ -5,14 +5,14 @@
   "counterNo": null,
   "machineNo": null,
   "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
+  "assetStatus": "",
+  "warehouseStock": false,
   "sourceFile": "20260724悠遊卡.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-07-28",
+      "date": "2026-07-27",
       "operator": "davidchung",
-      "action": "test",
+      "action": "",
       "changes": [
         {
           "field": "counterNo",
@@ -23,9 +23,14 @@
           "field": "machineNo",
           "oldValue": "",
           "newValue": "test"
+        },
+        {
+          "field": "",
+          "oldValue": "",
+          "newValue": ""
         }
       ],
-      "remark": "test",
+      "remark": "",
       "commitId": ""
     }
   ]
