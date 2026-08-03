@@ -1,23 +1,28 @@
 {
   "terminalId": "64615940",
   "category": "台新刷卡機",
-  "assetDescription": "V3C",
+  "assetDescription": "台新刷卡機",
   "counterNo": "69202",
-  "machineNo": "24603",
-  "merchantCode": "000812660111790",
-  "assetStatus": "使用中",
+  "machineNo": "24621",
+  "merchantCode": null,
+  "assetStatus": "",
   "warehouseStock": false,
-  "sourceFile": "20260724台新.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
-      "operator": "",
-      "action": "",
+      "date": "2026-08-02",
+      "operator": "比漾值機",
+      "action": "撤櫃",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃號",
+          "oldValue": "69202",
+          "newValue": "0"
+        },
+        {
+          "field": "機號",
+          "oldValue": "24621",
+          "newValue": "0"
         }
       ],
       "remark": "",

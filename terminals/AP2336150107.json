@@ -1,23 +1,28 @@
 {
   "terminalId": "AP2336150107",
   "category": "POS機",
-  "assetDescription": "AP-3615 POS Terminal",
+  "assetDescription": "POS",
   "counterNo": "69202",
-  "machineNo": "24603",
+  "machineNo": "24621",
   "merchantCode": null,
-  "assetStatus": "使用中",
+  "assetStatus": "",
   "warehouseStock": false,
-  "sourceFile": "20260724POS.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
-      "operator": "",
-      "action": "",
+      "date": "2026-08-02",
+      "operator": "比漾值機",
+      "action": "撤櫃",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃號",
+          "oldValue": "69202",
+          "newValue": "0"
+        },
+        {
+          "field": "機號",
+          "oldValue": "24621",
+          "newValue": "0"
         }
       ],
       "remark": "",
