@@ -2,25 +2,30 @@
   "terminalId": "23612010",
   "category": "聯合刷卡機",
   "assetDescription": "AS350 PINpad Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "56115",
+  "machineNo": "23547",
   "merchantCode": "1301003669",
-  "assetStatus": "倉庫備品",
+  "assetStatus": "Matsukiyo松本清",
   "warehouseStock": true,
-  "sourceFile": "20260724聯合.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-04",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "56115"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "23547"
         }
       ],
-      "remark": "",
+      "remark": "更換",
       "commitId": ""
     }
   ]
