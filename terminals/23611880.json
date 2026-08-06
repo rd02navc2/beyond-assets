@@ -2,25 +2,30 @@
   "terminalId": "23611880",
   "category": "聯合刷卡機",
   "assetDescription": "AS350 PINpad Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "70063",
+  "machineNo": "24735",
   "merchantCode": "1304200115",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724聯合.xlsx",
+  "assetStatus": "繼光香香雞",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-05",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "70063"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "24735"
         }
       ],
-      "remark": "",
+      "remark": "更換",
       "commitId": ""
     }
   ]
