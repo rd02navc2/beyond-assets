@@ -1,26 +1,31 @@
 {
   "terminalId": "0001580601404122",
-  "category": "悠遊卡刷卡機",
+  "category": "悠遊卡機",
   "assetDescription": "悠遊卡機CMAS",
-  "counterNo": "70063",
-  "machineNo": "24735",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": null,
-  "assetStatus": "使用中",
-  "warehouseStock": false,
-  "sourceFile": "20260724悠遊卡.xlsx",
+  "assetStatus": "倉庫備機",
+  "warehouseStock": true,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-08",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
+          "field": "counterNo",
+          "oldValue": "70063",
+          "newValue": ""
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "24735",
           "newValue": ""
         }
       ],
-      "remark": "",
+      "remark": "更換",
       "commitId": ""
     }
   ]

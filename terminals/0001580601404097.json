@@ -1,26 +1,31 @@
 {
   "terminalId": "0001580601404097",
-  "category": "悠遊卡刷卡機",
+  "category": "悠遊卡機",
   "assetDescription": "悠遊卡機CMAS",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "70063",
+  "machineNo": "24735",
   "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724悠遊卡.xlsx",
+  "assetStatus": "繼光香香雞",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-08",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "70063"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "24735"
         }
       ],
-      "remark": "",
+      "remark": "更換",
       "commitId": ""
     }
   ]

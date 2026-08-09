@@ -2,30 +2,30 @@
   "terminalId": "AP2336150040",
   "category": "POS機",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "75005",
+  "machineNo": "24728",
   "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
+  "assetStatus": "義香芝麻醬",
+  "warehouseStock": false,
   "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "2026-08-05",
+      "date": "2026-08-08",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "counterNo",
-          "oldValue": "56120",
-          "newValue": ""
+          "oldValue": "",
+          "newValue": "75005"
         },
         {
           "field": "machineNo",
-          "oldValue": "23535",
-          "newValue": ""
+          "oldValue": "",
+          "newValue": "24728"
         }
       ],
-      "remark": "撤櫃",
+      "remark": "進櫃",
       "commitId": ""
     }
   ]

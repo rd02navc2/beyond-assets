@@ -2,16 +2,16 @@
   "terminalId": "64615866",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "11001",
-  "machineNo": "11145",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "000812660111790",
-  "assetStatus": "使用中",
-  "warehouseStock": false,
-  "sourceFile": "20260724台新.xlsx",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20260808台新刷卡機資產.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
-      "operator": "",
+      "date": "2026-08-09",
+      "operator": "davidchung",
       "action": "",
       "changes": [
         {
