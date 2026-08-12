@@ -2,25 +2,30 @@
   "terminalId": "64616028",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "70068",
+  "machineNo": "24502",
   "merchantCode": "000812000119221",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260810台新刷卡機資產.xlsx",
+  "assetStatus": "日式勝博殿炸豬排",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
       "date": "2026-08-12",
-      "operator": "davidchung",
+      "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "70068"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "24502"
         }
       ],
-      "remark": "",
+      "remark": "更換",
       "commitId": ""
     }
   ]

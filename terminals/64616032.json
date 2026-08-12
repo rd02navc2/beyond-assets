@@ -2,30 +2,30 @@
   "terminalId": "64616032",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "70068",
-  "machineNo": "24502",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "000812000119221",
-  "assetStatus": "",
-  "warehouseStock": false,
-  "sourceFile": "20260810台新刷卡機資產.xlsx",
+  "assetStatus": "倉庫庫存",
+  "warehouseStock": true,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
       "date": "2026-08-12",
-      "operator": "davidchung",
+      "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "櫃檯編號 (counterNo)",
-          "oldValue": "",
-          "newValue": "70068"
+          "field": "counterNo",
+          "oldValue": "70068",
+          "newValue": ""
         },
         {
-          "field": "機台編號 (machineNo)",
-          "oldValue": "",
-          "newValue": "24502"
+          "field": "machineNo",
+          "oldValue": "24502",
+          "newValue": ""
         }
       ],
-      "remark": "",
+      "remark": "更換",
       "commitId": ""
     }
   ]
