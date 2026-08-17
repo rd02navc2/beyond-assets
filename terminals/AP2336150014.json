@@ -2,25 +2,35 @@
   "terminalId": "AP2336150014",
   "category": "POS機",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": "75186",
-  "machineNo": "24739",
+  "counterNo": "75226",
+  "machineNo": "24723",
   "merchantCode": null,
-  "assetStatus": "使用中",
+  "assetStatus": "巧果",
   "warehouseStock": false,
-  "sourceFile": "20260724POS.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-14",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "counterNo",
+          "oldValue": "75186",
+          "newValue": "75226"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "24739",
+          "newValue": "24723"
+        },
+        {
+          "field": "assetStatus",
+          "oldValue": "林梅水果干",
+          "newValue": "巧果"
         }
       ],
-      "remark": "",
+      "remark": "替換專櫃",
       "commitId": ""
     }
   ]

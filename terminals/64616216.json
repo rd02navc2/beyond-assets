@@ -2,25 +2,35 @@
   "terminalId": "64616216",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "75186",
-  "machineNo": "24739",
-  "merchantCode": "000812660111790",
-  "assetStatus": "使用中",
+  "counterNo": "75226",
+  "machineNo": "24723",
+  "merchantCode": null,
+  "assetStatus": "巧果",
   "warehouseStock": false,
-  "sourceFile": "20260724台新.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-14",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "counterNo",
+          "oldValue": "75186",
+          "newValue": "75226"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "24739",
+          "newValue": "24723"
+        },
+        {
+          "field": "assetStatus",
+          "oldValue": "林梅水果干",
+          "newValue": "巧果"
         }
       ],
-      "remark": "",
+      "remark": "替換專櫃",
       "commitId": ""
     }
   ]
