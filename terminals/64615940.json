@@ -1,31 +1,31 @@
 {
   "terminalId": "64615940",
   "category": "台新刷卡機",
-  "assetDescription": "台新刷卡機",
-  "counterNo": "69202",
-  "machineNo": "24621",
+  "assetDescription": "V3C",
+  "counterNo": "75113",
+  "machineNo": "24724",
   "merchantCode": null,
-  "assetStatus": "",
+  "assetStatus": "元祖食品",
   "warehouseStock": false,
   "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "2026-08-02",
-      "operator": "比漾值機",
-      "action": "撤櫃",
+      "date": "2026-08-20",
+      "operator": "",
+      "action": "",
       "changes": [
         {
-          "field": "櫃號",
-          "oldValue": "69202",
-          "newValue": "0"
+          "field": "counterNo",
+          "oldValue": "",
+          "newValue": "75113"
         },
         {
-          "field": "機號",
-          "oldValue": "24621",
-          "newValue": "0"
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "24724"
         }
       ],
-      "remark": "",
+      "remark": "進櫃",
       "commitId": ""
     }
   ]

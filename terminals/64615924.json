@@ -1,28 +1,28 @@
 {
   "terminalId": "64615924",
-  "category": "台新刷卡機機",
+  "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "75005",
-  "machineNo": "24728",
-  "merchantCode": "000812660111790",
-  "assetStatus": "義香芝麻醬",
+  "counterNo": "75011",
+  "machineNo": "24743",
+  "merchantCode": null,
+  "assetStatus": "奇華食品",
   "warehouseStock": false,
   "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "2026-08-08",
+      "date": "2026-08-20",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "counterNo",
-          "oldValue": "",
-          "newValue": "75005"
+          "oldValue": "75005",
+          "newValue": "75011"
         },
         {
           "field": "machineNo",
-          "oldValue": "",
-          "newValue": "24728"
+          "oldValue": "24728",
+          "newValue": "24743"
         }
       ],
       "remark": "進櫃",

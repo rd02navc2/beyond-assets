@@ -2,25 +2,30 @@
   "terminalId": "AP2336150057",
   "category": "POS機",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "75113",
+  "machineNo": "24724",
   "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724POS.xlsx",
+  "assetStatus": "元祖食品",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-20",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "75113"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "24724"
         }
       ],
-      "remark": "",
+      "remark": "進櫃",
       "commitId": ""
     }
   ]
