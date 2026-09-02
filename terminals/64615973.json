@@ -4,20 +4,25 @@
   "assetDescription": "V3C",
   "counterNo": null,
   "machineNo": null,
-  "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724台新.xlsx",
+  "merchantCode": null,
+  "assetStatus": "蔡佳瑾",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-31",
       "operator": "",
-      "action": "",
+      "action": "更換",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "21109"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "12234"
         }
       ],
       "remark": "",

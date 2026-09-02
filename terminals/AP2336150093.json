@@ -5,19 +5,24 @@
   "counterNo": null,
   "machineNo": null,
   "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724POS.xlsx",
+  "assetStatus": "蔡佳瑾",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-31",
       "operator": "",
-      "action": "",
+      "action": "進櫃",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "21109"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "12234"
         }
       ],
       "remark": "",

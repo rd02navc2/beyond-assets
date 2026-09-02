@@ -2,22 +2,27 @@
   "terminalId": "64615910",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "21098",
-  "machineNo": "12232",
-  "merchantCode": "000812660111790",
-  "assetStatus": "使用中",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": null,
+  "assetStatus": "SONSY采夏",
   "warehouseStock": false,
-  "sourceFile": "20260724台新.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-31",
       "operator": "",
-      "action": "",
+      "action": "換櫃",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "counterNo",
+          "oldValue": "21098",
+          "newValue": "21135"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "12232",
+          "newValue": "12204"
         }
       ],
       "remark": "",

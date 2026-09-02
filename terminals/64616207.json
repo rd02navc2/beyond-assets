@@ -2,30 +2,30 @@
   "terminalId": "64616207",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "18130",
-  "machineNo": "11148",
-  "merchantCode": "000812660111790",
-  "assetStatus": "",
-  "warehouseStock": false,
-  "sourceFile": "20260805刷卡機更換.xlsx",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": null,
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "2026-08-06",
-      "operator": "davidchung",
-      "action": "",
+      "date": "2026-08-31",
+      "operator": "",
+      "action": "撤櫃",
       "changes": [
         {
-          "field": "櫃檯編號 (counterNo)",
-          "oldValue": "",
-          "newValue": "18130"
+          "field": "counterNo",
+          "oldValue": "18130",
+          "newValue": ""
         },
         {
-          "field": "機台編號 (machineNo)",
-          "oldValue": "",
-          "newValue": "11148"
+          "field": "machineNo",
+          "oldValue": "11148",
+          "newValue": ""
         }
       ],
-      "remark": "HAKERS ",
+      "remark": "",
       "commitId": ""
     }
   ]

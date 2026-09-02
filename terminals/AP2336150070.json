@@ -2,22 +2,27 @@
   "terminalId": "AP2336150070",
   "category": "POS機",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": "21098",
-  "machineNo": "12232",
+  "counterNo": "21135",
+  "machineNo": "12204",
   "merchantCode": null,
-  "assetStatus": "使用中",
+  "assetStatus": "SONSY采夏",
   "warehouseStock": false,
-  "sourceFile": "20260724POS.xlsx",
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-08-31",
       "operator": "",
-      "action": "",
+      "action": "換櫃",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "counterNo",
+          "oldValue": "21098",
+          "newValue": "21135"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "12232",
+          "newValue": "12204"
         }
       ],
       "remark": "",
