@@ -2,25 +2,19 @@
   "terminalId": "64615968",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "50701",
+  "machineNo": "23543",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724台新.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-09-07",
       "operator": "",
       "action": "",
-      "changes": [
-        {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
-        }
-      ],
-      "remark": "",
+      "changes": [],
+      "remark": "宜得利",
       "commitId": ""
     }
   ]
