@@ -13,7 +13,18 @@
       "date": "2026-09-07",
       "operator": "",
       "action": "",
-      "changes": [],
+      "changes": [
+        {
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "",
+          "newValue": "56112"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "23574"
+        }
+      ],
       "remark": "宜得利",
       "commitId": ""
     }
