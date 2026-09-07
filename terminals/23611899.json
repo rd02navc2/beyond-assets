@@ -1,0 +1,32 @@
+{
+  "terminalId": "23611899",
+  "category": "聯合刷卡機",
+  "assetDescription": "AS350 PINpad Terminal",
+  "counterNo": "56112",
+  "machineNo": "23510",
+  "merchantCode": "1301003669",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "",
+  "adjustmentHistory": [
+    {
+      "date": "2026-09-07",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "",
+          "newValue": ""
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "23510"
+        }
+      ],
+      "remark": "集雅社",
+      "commitId": ""
+    }
+  ]
+}
