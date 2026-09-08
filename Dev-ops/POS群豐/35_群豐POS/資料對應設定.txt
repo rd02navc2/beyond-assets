@@ -1,0 +1,5 @@
+收銀員：VENUS_BEYOND - A11
+收銀機：ERP apci040 -> VENUS_BEYOND - E01
+專櫃合約：ERP almi400 -> VENUS_BEYOND -  A07
+發票：ERP axri020 -> VENUS_BEYOND - E04
+商品：ERP arti100 -> A05

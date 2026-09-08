@@ -1,0 +1,3 @@
+排程設定在AP2上面，
+建議你到AP2的排程網址進行新增
+http://rpt2.beyondplaza.com.tw:8080/VENUS_SCHED/
