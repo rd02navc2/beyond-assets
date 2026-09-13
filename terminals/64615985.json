@@ -1,26 +1,31 @@
 {
   "terminalId": "64615985",
-  "category": "台新刷卡機",
+  "category": "聯合刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "12024",
+  "machineNo": "11169",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260810台新刷卡機資產.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0912聯合刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-12",
-      "operator": "davidchung",
+      "date": "2026-09-12",
+      "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "櫃檯編號 (counterNo)",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "12024"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "11169"
         }
       ],
-      "remark": "",
+      "remark": "uniarts",
       "commitId": ""
     }
   ]
