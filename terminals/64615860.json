@@ -1,31 +1,26 @@
 {
   "terminalId": "64615860",
-  "category": "台新刷卡機",
+  "category": "聯合刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "12021",
-  "machineNo": "11147",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "000812660111790",
-  "assetStatus": "",
-  "warehouseStock": false,
-  "sourceFile": "20260805刷卡機更換.xlsx",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "0912聯合刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-06",
-      "operator": "davidchung",
+      "date": "2026-09-12",
+      "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "櫃檯編號 (counterNo)",
+          "field": "",
           "oldValue": "",
-          "newValue": "12021"
-        },
-        {
-          "field": "機台編號 (machineNo)",
-          "oldValue": "",
-          "newValue": "11147"
+          "newValue": ""
         }
       ],
-      "remark": "PORTER (9s feel nice)",
+      "remark": "",
       "commitId": ""
     }
   ]

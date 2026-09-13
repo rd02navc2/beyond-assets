@@ -2,25 +2,30 @@
   "terminalId": "64615864",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "20013",
+  "machineNo": "12229",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260807台新刷卡機資產.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0911台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-08",
-      "operator": "davidchung",
+      "date": "2026-09-11",
+      "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "序號S/N",
+          "field": "櫃檯編號 (counterNo)",
           "oldValue": "",
-          "newValue": "118232818979"
+          "newValue": "20013"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "12229"
         }
       ],
-      "remark": "",
+      "remark": "8happy",
       "commitId": ""
     }
   ]
