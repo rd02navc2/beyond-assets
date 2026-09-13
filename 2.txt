@@ -1,0 +1,3502 @@
+commit 4f7150e87b9d908622e91cf24d7b9e572fb0e860
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Fri Aug 21 10:47:20 2026 +0800
+
+     2026.08.14 星期五
+    22:05 資訊值機 23612085.json
+    22:05 資訊值機 64616216.json
+    22:05 資訊值機 AP2336150014.json
+    2026.08.17 星期一
+    10:27 David 收到謝謝
+    2026.08.19 星期三
+    20:21 資訊值機 23611260.json
+    20:21 資訊值機 23612025.json
+    2026.08.20 星期四
+    21:57 資訊值機 64615924.json
+    21:57 資訊值機 64615940.json
+    21:57 資訊值機 AP2336150040.json
+    21:57 資訊值機 AP2336150057.json
+    21:57 資訊值機 23611969.json
+    21:57 資訊值機 23612021.json
+
+diff --git a/terminals/23611260.json b/terminals/23611260.json
+index a019756..25e2019 100644
+--- a/terminals/23611260.json
++++ b/terminals/23611260.json
+@@ -2,25 +2,30 @@
+   "terminalId": "23611260",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "20049",
+-  "machineNo": "12207",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫庫存",
++  "warehouseStock": true,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-19",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
+-          "oldValue": "",
++          "field": "counterNo",
++          "oldValue": "20049",
++          "newValue": ""
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "12207",
+           "newValue": ""
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/23611969.json b/terminals/23611969.json
+index 5d448a3..5077132 100644
+--- a/terminals/23611969.json
++++ b/terminals/23611969.json
+@@ -2,27 +2,27 @@
+   "terminalId": "23611969",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "75005",
+-  "machineNo": "24728",
+-  "merchantCode": "1301003669",
+-  "assetStatus": "義香芝麻醬",
++  "counterNo": "75011",
++  "machineNo": "24743",
++  "merchantCode": null,
++  "assetStatus": "奇華食品",
+   "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-08",
++      "date": "2026-08-20",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+           "field": "counterNo",
+-          "oldValue": "",
+-          "newValue": "75005"
++          "oldValue": "75005",
++          "newValue": "75011"
+         },
+         {
+           "field": "machineNo",
+-          "oldValue": "",
+-          "newValue": "24728"
++          "oldValue": "24728",
++          "newValue": "24743"
+         }
+       ],
+       "remark": "進櫃",
+diff --git a/terminals/23612021.json b/terminals/23612021.json
+index 2f55e12..62884af 100644
+--- a/terminals/23612021.json
++++ b/terminals/23612021.json
+@@ -1,31 +1,31 @@
+ {
+   "terminalId": "23612021",
+   "category": "聯合刷卡機",
+-  "assetDescription": "聯合刷卡機",
+-  "counterNo": "69202",
+-  "machineNo": "24621",
++  "assetDescription": "AS350 PINpad Terminal",
++  "counterNo": "75113",
++  "machineNo": "24724",
+   "merchantCode": null,
+-  "assetStatus": "",
++  "assetStatus": "元祖食品",
+   "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-02",
+-      "operator": "比漾值機",
+-      "action": "撤櫃",
++      "date": "2026-08-20",
++      "operator": "",
++      "action": "",
+       "changes": [
+         {
+-          "field": "櫃號",
+-          "oldValue": "69202",
+-          "newValue": "0"
++          "field": "counterNo",
++          "oldValue": "",
++          "newValue": "75113"
+         },
+         {
+-          "field": "機號",
+-          "oldValue": "24621",
+-          "newValue": "0"
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24724"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/23612025.json b/terminals/23612025.json
+index fb99752..ce87e99 100644
+--- a/terminals/23612025.json
++++ b/terminals/23612025.json
+@@ -2,25 +2,30 @@
+   "terminalId": "23612025",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "20049",
++  "machineNo": "12207",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260808聯合刷卡機資產.xlsx",
++  "assetStatus": "Ure",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-09",
+-      "operator": "dvidchung",
++      "date": "2026-08-19",
++      "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "20049"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "12207"
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64615924.json b/terminals/64615924.json
+index c792a5b..4fdb384 100644
+--- a/terminals/64615924.json
++++ b/terminals/64615924.json
+@@ -1,28 +1,28 @@
+ {
+   "terminalId": "64615924",
+-  "category": "台新刷卡機機",
++  "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "75005",
+-  "machineNo": "24728",
+-  "merchantCode": "000812660111790",
+-  "assetStatus": "義香芝麻醬",
++  "counterNo": "75011",
++  "machineNo": "24743",
++  "merchantCode": null,
++  "assetStatus": "奇華食品",
+   "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-08",
++      "date": "2026-08-20",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+           "field": "counterNo",
+-          "oldValue": "",
+-          "newValue": "75005"
++          "oldValue": "75005",
++          "newValue": "75011"
+         },
+         {
+           "field": "machineNo",
+-          "oldValue": "",
+-          "newValue": "24728"
++          "oldValue": "24728",
++          "newValue": "24743"
+         }
+       ],
+       "remark": "進櫃",
+diff --git a/terminals/64615940.json b/terminals/64615940.json
+index d578014..52aa760 100644
+--- a/terminals/64615940.json
++++ b/terminals/64615940.json
+@@ -1,31 +1,31 @@
+ {
+   "terminalId": "64615940",
+   "category": "台新刷卡機",
+-  "assetDescription": "台新刷卡機",
+-  "counterNo": "69202",
+-  "machineNo": "24621",
++  "assetDescription": "V3C",
++  "counterNo": "75113",
++  "machineNo": "24724",
+   "merchantCode": null,
+-  "assetStatus": "",
++  "assetStatus": "元祖食品",
+   "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-02",
+-      "operator": "比漾值機",
+-      "action": "撤櫃",
++      "date": "2026-08-20",
++      "operator": "",
++      "action": "",
+       "changes": [
+         {
+-          "field": "櫃號",
+-          "oldValue": "69202",
+-          "newValue": "0"
++          "field": "counterNo",
++          "oldValue": "",
++          "newValue": "75113"
+         },
+         {
+-          "field": "機號",
+-          "oldValue": "24621",
+-          "newValue": "0"
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24724"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/AP2336150040.json b/terminals/AP2336150040.json
+index 528cc45..4dab249 100644
+--- a/terminals/AP2336150040.json
++++ b/terminals/AP2336150040.json
+@@ -2,27 +2,27 @@
+   "terminalId": "AP2336150040",
+   "category": "POS機",
+   "assetDescription": "AP-3615 POS Terminal",
+-  "counterNo": "75005",
+-  "machineNo": "24728",
++  "counterNo": "75011",
++  "machineNo": "24743",
+   "merchantCode": null,
+-  "assetStatus": "義香芝麻醬",
++  "assetStatus": "奇華食品",
+   "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-08",
++      "date": "2026-08-20",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+           "field": "counterNo",
+-          "oldValue": "",
+-          "newValue": "75005"
++          "oldValue": "75005",
++          "newValue": "75011"
+         },
+         {
+           "field": "machineNo",
+-          "oldValue": "",
+-          "newValue": "24728"
++          "oldValue": "24728",
++          "newValue": "24743"
+         }
+       ],
+       "remark": "進櫃",
+diff --git a/terminals/AP2336150057.json b/terminals/AP2336150057.json
+index 67cf4f9..f30ee47 100644
+--- a/terminals/AP2336150057.json
++++ b/terminals/AP2336150057.json
+@@ -2,25 +2,30 @@
+   "terminalId": "AP2336150057",
+   "category": "POS機",
+   "assetDescription": "AP-3615 POS Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "75113",
++  "machineNo": "24724",
+   "merchantCode": null,
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724POS.xlsx",
++  "assetStatus": "元祖食品",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-20",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "75113"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24724"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+
+commit b39e48a288b193b2aa287f8630a9aa6d441955e9
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Mon Aug 17 10:29:57 2026 +0800
+
+     22:05 資訊值機 23612085.json
+    22:05 資訊值機 64616216.json
+    22:05 資訊值機 AP2336150014.json
+
+diff --git a/terminals/23612085.json b/terminals/23612085.json
+index a6b164b..f660c46 100644
+--- a/terminals/23612085.json
++++ b/terminals/23612085.json
+@@ -2,25 +2,35 @@
+   "terminalId": "23612085",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "75186",
+-  "machineNo": "24739",
+-  "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
++  "counterNo": "75226",
++  "machineNo": "24723",
++  "merchantCode": null,
++  "assetStatus": "巧果",
+   "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-14",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
+-          "oldValue": "",
+-          "newValue": ""
++          "field": "counterNo",
++          "oldValue": "75186",
++          "newValue": "75226"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "24739",
++          "newValue": "24723"
++        },
++        {
++          "field": "assetStatus",
++          "oldValue": "林梅水果干",
++          "newValue": "巧果"
+         }
+       ],
+-      "remark": "",
++      "remark": "替換專櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64616216.json b/terminals/64616216.json
+index c9ced51..9aabc3d 100644
+--- a/terminals/64616216.json
++++ b/terminals/64616216.json
+@@ -2,25 +2,35 @@
+   "terminalId": "64616216",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "75186",
+-  "machineNo": "24739",
+-  "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
++  "counterNo": "75226",
++  "machineNo": "24723",
++  "merchantCode": null,
++  "assetStatus": "巧果",
+   "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-14",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
+-          "oldValue": "",
+-          "newValue": ""
++          "field": "counterNo",
++          "oldValue": "75186",
++          "newValue": "75226"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "24739",
++          "newValue": "24723"
++        },
++        {
++          "field": "assetStatus",
++          "oldValue": "林梅水果干",
++          "newValue": "巧果"
+         }
+       ],
+-      "remark": "",
++      "remark": "替換專櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/AP2336150014.json b/terminals/AP2336150014.json
+index c196f27..22a37ee 100644
+--- a/terminals/AP2336150014.json
++++ b/terminals/AP2336150014.json
+@@ -2,25 +2,35 @@
+   "terminalId": "AP2336150014",
+   "category": "POS機",
+   "assetDescription": "AP-3615 POS Terminal",
+-  "counterNo": "75186",
+-  "machineNo": "24739",
++  "counterNo": "75226",
++  "machineNo": "24723",
+   "merchantCode": null,
+-  "assetStatus": "使用中",
++  "assetStatus": "巧果",
+   "warehouseStock": false,
+-  "sourceFile": "20260724POS.xlsx",
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-14",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
+-          "oldValue": "",
+-          "newValue": ""
++          "field": "counterNo",
++          "oldValue": "75186",
++          "newValue": "75226"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "24739",
++          "newValue": "24723"
++        },
++        {
++          "field": "assetStatus",
++          "oldValue": "林梅水果干",
++          "newValue": "巧果"
+         }
+       ],
+-      "remark": "",
++      "remark": "替換專櫃",
+       "commitId": ""
+     }
+   ]
+
+commit 2d2e8dd882652d3dabdff4bbeaa1967089703225
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Wed Aug 12 14:47:10 2026 +0800
+
+     14:30 資訊值機 64615780.json
+    14:30 資訊值機 64616221.json
+    14:30 資訊值機 64616032.json
+    14:30 資訊值機 64616028.json
+
+diff --git a/terminals/64615780.json b/terminals/64615780.json
+index 212da40..7d16c55 100644
+--- a/terminals/64615780.json
++++ b/terminals/64615780.json
+@@ -2,25 +2,30 @@
+   "terminalId": "64615780",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70077",
++  "machineNo": "24203",
+   "merchantCode": "000812000119221",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260810台新刷卡機資產.xlsx",
++  "assetStatus": "真珠台灣家味",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+       "date": "2026-08-12",
+-      "operator": "davidchung",
++      "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70077"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24203"
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64616028.json b/terminals/64616028.json
+index a13c825..c2266b6 100644
+--- a/terminals/64616028.json
++++ b/terminals/64616028.json
+@@ -2,25 +2,30 @@
+   "terminalId": "64616028",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70068",
++  "machineNo": "24502",
+   "merchantCode": "000812000119221",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260810台新刷卡機資產.xlsx",
++  "assetStatus": "日式勝博殿炸豬排",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+       "date": "2026-08-12",
+-      "operator": "davidchung",
++      "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70068"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24502"
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64616032.json b/terminals/64616032.json
+index daf380d..4b8654f 100644
+--- a/terminals/64616032.json
++++ b/terminals/64616032.json
+@@ -2,30 +2,30 @@
+   "terminalId": "64616032",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "70068",
+-  "machineNo": "24502",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812000119221",
+-  "assetStatus": "",
+-  "warehouseStock": false,
+-  "sourceFile": "20260810台新刷卡機資產.xlsx",
++  "assetStatus": "倉庫庫存",
++  "warehouseStock": true,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+       "date": "2026-08-12",
+-      "operator": "davidchung",
++      "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "櫃檯編號 (counterNo)",
+-          "oldValue": "",
+-          "newValue": "70068"
++          "field": "counterNo",
++          "oldValue": "70068",
++          "newValue": ""
+         },
+         {
+-          "field": "機台編號 (machineNo)",
+-          "oldValue": "",
+-          "newValue": "24502"
++          "field": "machineNo",
++          "oldValue": "24502",
++          "newValue": ""
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64616221.json b/terminals/64616221.json
+index 41a0f27..ada8b58 100644
+--- a/terminals/64616221.json
++++ b/terminals/64616221.json
+@@ -2,25 +2,30 @@
+   "terminalId": "64616221",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "70077",
+-  "machineNo": "24203",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812000119221",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫庫存",
++  "warehouseStock": true,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-12",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
+-          "oldValue": "",
++          "field": "counterNo",
++          "oldValue": "70077",
++          "newValue": ""
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "24203",
+           "newValue": ""
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+
+commit 59f882590ed7672281e1d130266cd06cd092d59f
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Wed Aug 12 12:18:30 2026 +0800
+
+     10:58 資訊值機 64615938.json
+    10:58 資訊值機 23611896.json
+    10:58 資訊值機 AP2336150107.json
+
+diff --git a/terminals/23611896.json b/terminals/23611896.json
+index 9135979..3f76e4e 100644
+--- a/terminals/23611896.json
++++ b/terminals/23611896.json
+@@ -2,25 +2,30 @@
+   "terminalId": "23611896",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "21129",
++  "machineNo": "12211",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "Le Polka",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-11",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "21129"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "12211"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64615938.json b/terminals/64615938.json
+index e2f385c..5e3aa7d 100644
+--- a/terminals/64615938.json
++++ b/terminals/64615938.json
+@@ -2,25 +2,30 @@
+   "terminalId": "64615938",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "21129",
++  "machineNo": "12211",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260806台新刷卡機資產 .xlsx",
++  "assetStatus": "Le Polka",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-06",
+-      "operator": "davidchung",
++      "date": "2026-08-11",
++      "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "21129"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "12211"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/AP2336150107.json b/terminals/AP2336150107.json
+index b694d9c..12f9e9a 100644
+--- a/terminals/AP2336150107.json
++++ b/terminals/AP2336150107.json
+@@ -1,31 +1,31 @@
+ {
+   "terminalId": "AP2336150107",
+   "category": "POS機",
+-  "assetDescription": "POS",
+-  "counterNo": "69202",
+-  "machineNo": "24621",
++  "assetDescription": "AP-3615 POS Terminal",
++  "counterNo": "21129",
++  "machineNo": "12211",
+   "merchantCode": null,
+-  "assetStatus": "",
++  "assetStatus": "Le Polka",
+   "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-02",
+-      "operator": "比漾值機",
+-      "action": "撤櫃",
++      "date": "2026-08-11",
++      "operator": "",
++      "action": "",
+       "changes": [
+         {
+-          "field": "櫃號",
+-          "oldValue": "69202",
+-          "newValue": "0"
++          "field": "counterNo",
++          "oldValue": "",
++          "newValue": "21129"
+         },
+         {
+-          "field": "機號",
+-          "oldValue": "24621",
+-          "newValue": "0"
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "12211"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+
+commit 4bf5dbc0dc4bcf167cdbc6da8d417970aaa096a1
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Wed Aug 12 10:10:30 2026 +0800
+
+     18:59 資訊值機 20260810聯合刷卡機資產.xlsx
+    18:59 資訊值機 20260810台新刷卡機資產.xlsx
+    19:00 資訊值機 @David 再麻煩
+
+diff --git "a/terminals/20260810\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260810\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..e690a79
+Binary files /dev/null and "b/terminals/20260810\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git "a/terminals/20260810\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260810\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..63f4aeb
+Binary files /dev/null and "b/terminals/20260810\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git a/terminals/23609541.json b/terminals/23609541.json
+index f159702..4b32797 100644
+--- a/terminals/23609541.json
++++ b/terminals/23609541.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23609541",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70095",
++  "machineNo": "24501",
+   "merchantCode": "1305900014",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260810聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70095"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "24501"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611852.json b/terminals/23611852.json
+index 0da1e71..f5d9e18 100644
+--- a/terminals/23611852.json
++++ b/terminals/23611852.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23611852",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "70095",
+-  "machineNo": "24501",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1305900014",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260810聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23611854.json b/terminals/23611854.json
+index 44f71f4..2bda6b5 100644
+--- a/terminals/23611854.json
++++ b/terminals/23611854.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23611854",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70086",
++  "machineNo": "24351",
+   "merchantCode": "1305900014",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260810聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70086"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "24351"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611859.json b/terminals/23611859.json
+index 593f8e3..3354a25 100644
+--- a/terminals/23611859.json
++++ b/terminals/23611859.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23611859",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "70068",
+-  "machineNo": "24502",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1305900014",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260810聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23611861.json b/terminals/23611861.json
+index 5f056e6..86bc814 100644
+--- a/terminals/23611861.json
++++ b/terminals/23611861.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23611861",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70068",
++  "machineNo": "24502",
+   "merchantCode": "1305900014",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260810聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70068"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "24502"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612097.json b/terminals/23612097.json
+index 76eeb43..a6f9eca 100644
+--- a/terminals/23612097.json
++++ b/terminals/23612097.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612097",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "70086",
+-  "machineNo": "24351",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1305900014",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260810聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615780.json b/terminals/64615780.json
+index 4ce98f8..212da40 100644
+--- a/terminals/64615780.json
++++ b/terminals/64615780.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615780",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "70068",
+-  "machineNo": "24502",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812000119221",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260810台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615985.json b/terminals/64615985.json
+index 388cdc1..5ccd738 100644
+--- a/terminals/64615985.json
++++ b/terminals/64615985.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615985",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "70095",
+-  "machineNo": "24501",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260810台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64616024.json b/terminals/64616024.json
+index 8a71308..9bfeb0b 100644
+--- a/terminals/64616024.json
++++ b/terminals/64616024.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64616024",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70095",
++  "machineNo": "24501",
+   "merchantCode": "000812000119221",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260810台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70095"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "24501"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64616028.json b/terminals/64616028.json
+index 70cbd83..a13c825 100644
+--- a/terminals/64616028.json
++++ b/terminals/64616028.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64616028",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "70086",
+-  "machineNo": "24351",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812000119221",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260810台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64616031.json b/terminals/64616031.json
+index ae6dbd0..1ca22e6 100644
+--- a/terminals/64616031.json
++++ b/terminals/64616031.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64616031",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70086",
++  "machineNo": "24351",
+   "merchantCode": "000812000119221",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260810台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70086"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "24351"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64616032.json b/terminals/64616032.json
+index 2fa9c33..daf380d 100644
+--- a/terminals/64616032.json
++++ b/terminals/64616032.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64616032",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70068",
++  "machineNo": "24502",
+   "merchantCode": "000812000119221",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260810台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-12",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70068"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "24502"
+         }
+       ],
+       "remark": "",
+diff --git "a/terminals/~$20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/~$20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+deleted file mode 100644
+index 2fb72fa..0000000
+Binary files "a/terminals/~$20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" and /dev/null differ
+
+commit b1cc2a7002f47e4fb30e519d5804a24539b581c0
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Sun Aug 9 12:37:11 2026 +0800
+
+     11:36 資訊值機 20260808聯合刷卡機資產.xlsx
+    11:36 資訊值機 20260808台新刷卡機資產.xlsx
+    11:37 資訊值機 23611969.json
+    11:37 資訊值機 64615924.json
+    11:37 資訊值機 0001580601404097.json
+    11:37 資訊值機 0001580601404122.json
+    11:37 資訊值機 AP2336150040.json
+
+diff --git a/terminals/0001580601404097.json b/terminals/0001580601404097.json
+index c13d56f..e2f6143 100644
+--- a/terminals/0001580601404097.json
++++ b/terminals/0001580601404097.json
+@@ -1,26 +1,31 @@
+ {
+   "terminalId": "0001580601404097",
+-  "category": "悠遊卡刷卡機",
++  "category": "悠遊卡機",
+   "assetDescription": "悠遊卡機CMAS",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "70063",
++  "machineNo": "24735",
+   "merchantCode": null,
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724悠遊卡.xlsx",
++  "assetStatus": "繼光香香雞",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-08",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "70063"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24735"
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/0001580601404122.json b/terminals/0001580601404122.json
+index 51ffa8a..620c4a8 100644
+--- a/terminals/0001580601404122.json
++++ b/terminals/0001580601404122.json
+@@ -1,26 +1,31 @@
+ {
+   "terminalId": "0001580601404122",
+-  "category": "悠遊卡刷卡機",
++  "category": "悠遊卡機",
+   "assetDescription": "悠遊卡機CMAS",
+-  "counterNo": "70063",
+-  "machineNo": "24735",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": null,
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724悠遊卡.xlsx",
++  "assetStatus": "倉庫備機",
++  "warehouseStock": true,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-08",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
+-          "oldValue": "",
++          "field": "counterNo",
++          "oldValue": "70063",
++          "newValue": ""
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "24735",
+           "newValue": ""
+         }
+       ],
+-      "remark": "",
++      "remark": "更換",
+       "commitId": ""
+     }
+   ]
+diff --git "a/terminals/20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..99cd500
+Binary files /dev/null and "b/terminals/20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git "a/terminals/20260808\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260808\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..1d29df2
+Binary files /dev/null and "b/terminals/20260808\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git a/terminals/23611906.json b/terminals/23611906.json
+index 51bd266..ffcb003 100644
+--- a/terminals/23611906.json
++++ b/terminals/23611906.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23611906",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "11001",
+-  "machineNo": "11145",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23611916.json b/terminals/23611916.json
+index 8be407e..2e24aa9 100644
+--- a/terminals/23611916.json
++++ b/terminals/23611916.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23611916",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12023",
++  "machineNo": "11124",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12023"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11124"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611934.json b/terminals/23611934.json
+index 180a904..953f496 100644
+--- a/terminals/23611934.json
++++ b/terminals/23611934.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23611934",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12012",
++  "machineNo": "11104",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12012"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11104"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611969.json b/terminals/23611969.json
+index 6818a7d..5d448a3 100644
+--- a/terminals/23611969.json
++++ b/terminals/23611969.json
+@@ -2,25 +2,30 @@
+   "terminalId": "23611969",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "75005",
++  "machineNo": "24728",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "義香芝麻醬",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-08",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "75005"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24728"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/23612025.json b/terminals/23612025.json
+index 50981e4..fb99752 100644
+--- a/terminals/23612025.json
++++ b/terminals/23612025.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612025",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "12023",
+-  "machineNo": "11124",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23612043.json b/terminals/23612043.json
+index e0c25be..38d8827 100644
+--- a/terminals/23612043.json
++++ b/terminals/23612043.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23612043",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12022",
++  "machineNo": "11127",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12022"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11127"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612047.json b/terminals/23612047.json
+index 696e5aa..97dedb1 100644
+--- a/terminals/23612047.json
++++ b/terminals/23612047.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612047",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "12012",
+-  "machineNo": "11104",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23612048.json b/terminals/23612048.json
+index f4c8b50..67e7cbe 100644
+--- a/terminals/23612048.json
++++ b/terminals/23612048.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612048",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "15002",
+-  "machineNo": "11149",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23612074.json b/terminals/23612074.json
+index 68d7826..f1fb084 100644
+--- a/terminals/23612074.json
++++ b/terminals/23612074.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23612074",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "15002",
++  "machineNo": "11149",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "15002"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11149"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612083.json b/terminals/23612083.json
+index 12f15de..2513342 100644
+--- a/terminals/23612083.json
++++ b/terminals/23612083.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23612083",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "11001",
++  "machineNo": "11145",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "dvidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "11001"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11145"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615863.json b/terminals/64615863.json
+index 8efdf11..ca4be5f 100644
+--- a/terminals/64615863.json
++++ b/terminals/64615863.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64615863",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "11001",
++  "machineNo": "11145",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "11001"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11145"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615866.json b/terminals/64615866.json
+index 10d35c5..62a5606 100644
+--- a/terminals/64615866.json
++++ b/terminals/64615866.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615866",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "11001",
+-  "machineNo": "11145",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615869.json b/terminals/64615869.json
+index b843d36..36f36bb 100644
+--- a/terminals/64615869.json
++++ b/terminals/64615869.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615869",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "12023",
+-  "machineNo": "11124",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615883.json b/terminals/64615883.json
+index a16aa0b..6365e1e 100644
+--- a/terminals/64615883.json
++++ b/terminals/64615883.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615883",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "12022",
+-  "machineNo": "11127",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615889.json b/terminals/64615889.json
+index 40ed8a0..6534ed2 100644
+--- a/terminals/64615889.json
++++ b/terminals/64615889.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615889",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "12012",
+-  "machineNo": "11104",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615914.json b/terminals/64615914.json
+index dce06b1..9b700a2 100644
+--- a/terminals/64615914.json
++++ b/terminals/64615914.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64615914",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12022",
++  "machineNo": "11127",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12022"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11127"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615924.json b/terminals/64615924.json
+index c5df3b9..c792a5b 100644
+--- a/terminals/64615924.json
++++ b/terminals/64615924.json
+@@ -1,26 +1,31 @@
+ {
+   "terminalId": "64615924",
+-  "category": "台新刷卡機",
++  "category": "台新刷卡機機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "75005",
++  "machineNo": "24728",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "義香芝麻醬",
++  "warehouseStock": false,
++  "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "",
++      "date": "2026-08-08",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "counterNo",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "75005"
++        },
++        {
++          "field": "machineNo",
++          "oldValue": "",
++          "newValue": "24728"
+         }
+       ],
+-      "remark": "",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git a/terminals/64615927.json b/terminals/64615927.json
+index 2e404c9..91f6b5a 100644
+--- a/terminals/64615927.json
++++ b/terminals/64615927.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64615927",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "15002",
++  "machineNo": "11149",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "15002"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11149"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615972.json b/terminals/64615972.json
+index 56ef153..eca4020 100644
+--- a/terminals/64615972.json
++++ b/terminals/64615972.json
+@@ -2,16 +2,16 @@
+   "terminalId": "64615972",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "15002",
+-  "machineNo": "11149",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615978.json b/terminals/64615978.json
+index 650144b..221fd72 100644
+--- a/terminals/64615978.json
++++ b/terminals/64615978.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64615978",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12012",
++  "machineNo": "11104",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12012"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11104"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64616206.json b/terminals/64616206.json
+index c851341..0261232 100644
+--- a/terminals/64616206.json
++++ b/terminals/64616206.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64616206",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12023",
++  "machineNo": "11124",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260808台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-09",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12023"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11124"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/AP2336150040.json b/terminals/AP2336150040.json
+index 01d3223..528cc45 100644
+--- a/terminals/AP2336150040.json
++++ b/terminals/AP2336150040.json
+@@ -2,30 +2,30 @@
+   "terminalId": "AP2336150040",
+   "category": "POS機",
+   "assetDescription": "AP-3615 POS Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "75005",
++  "machineNo": "24728",
+   "merchantCode": null,
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
++  "assetStatus": "義香芝麻醬",
++  "warehouseStock": false,
+   "sourceFile": "",
+   "adjustmentHistory": [
+     {
+-      "date": "2026-08-05",
++      "date": "2026-08-08",
+       "operator": "",
+       "action": "",
+       "changes": [
+         {
+           "field": "counterNo",
+-          "oldValue": "56120",
+-          "newValue": ""
++          "oldValue": "",
++          "newValue": "75005"
+         },
+         {
+           "field": "machineNo",
+-          "oldValue": "23535",
+-          "newValue": ""
++          "oldValue": "",
++          "newValue": "24728"
+         }
+       ],
+-      "remark": "撤櫃",
++      "remark": "進櫃",
+       "commitId": ""
+     }
+   ]
+diff --git "a/terminals/~$20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/~$20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..2fb72fa
+Binary files /dev/null and "b/terminals/~$20260808\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+
+commit e08e02594afacdb0c9960ad33a60232c57c68cd1
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Sat Aug 8 10:27:54 2026 +0800
+
+     19:09 資訊值機 20260807聯合刷卡機資產.xlsx
+    19:09 資訊值機 20260807台新刷卡機資產.xlsx
+
+diff --git "a/terminals/20260807\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260807\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..01fac04
+Binary files /dev/null and "b/terminals/20260807\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git "a/terminals/20260807\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260807\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..2ceb6c8
+Binary files /dev/null and "b/terminals/20260807\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git a/terminals/23609540.json b/terminals/23609540.json
+index ac75f2d..6636d0f 100644
+--- a/terminals/23609540.json
++++ b/terminals/23609540.json
+@@ -2,22 +2,32 @@
+   "terminalId": "23609540",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "21127",
++  "machineNo": "12221",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "21127"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "12221"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "350-31013938"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611908.json b/terminals/23611908.json
+index 9b608aa..1b0d669 100644
+--- a/terminals/23611908.json
++++ b/terminals/23611908.json
+@@ -2,22 +2,22 @@
+   "terminalId": "23611908",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "10014",
+-  "machineNo": "11118",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260724悠遊卡.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "350-31017626"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611920.json b/terminals/23611920.json
+index 4d45dd3..0a87c7e 100644
+--- a/terminals/23611920.json
++++ b/terminals/23611920.json
+@@ -2,22 +2,32 @@
+   "terminalId": "23611920",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "21099",
++  "machineNo": "12203",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "21099"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "12203"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "350-31017638"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611923.json b/terminals/23611923.json
+index 1ce0921..c5bba5f 100644
+--- a/terminals/23611923.json
++++ b/terminals/23611923.json
+@@ -2,22 +2,22 @@
+   "terminalId": "23611923",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "10018",
+-  "machineNo": "11111",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260724悠遊卡.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "350-31017641"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611961.json b/terminals/23611961.json
+index cd3fd46..31749fc 100644
+--- a/terminals/23611961.json
++++ b/terminals/23611961.json
+@@ -2,22 +2,32 @@
+   "terminalId": "23611961",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "11017",
++  "machineNo": "11144",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "11017"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11144"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "350-31017679"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611968.json b/terminals/23611968.json
+index c101c65..065ae10 100644
+--- a/terminals/23611968.json
++++ b/terminals/23611968.json
+@@ -2,22 +2,32 @@
+   "terminalId": "23611968",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "10014",
++  "machineNo": "11118",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "10014"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11118"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "350-31017686"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612013.json b/terminals/23612013.json
+index 5be28f6..5d0ed07 100644
+--- a/terminals/23612013.json
++++ b/terminals/23612013.json
+@@ -2,22 +2,22 @@
+   "terminalId": "23612013",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "21099",
+-  "machineNo": "12203",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260724悠遊卡.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "350-31017731"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612046.json b/terminals/23612046.json
+index 686a5ca..3258a67 100644
+--- a/terminals/23612046.json
++++ b/terminals/23612046.json
+@@ -2,22 +2,22 @@
+   "terminalId": "23612046",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "11017",
+-  "machineNo": "11144",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260724悠遊卡.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "350-31017764"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612049.json b/terminals/23612049.json
+index c26049f..8b8f03f 100644
+--- a/terminals/23612049.json
++++ b/terminals/23612049.json
+@@ -2,22 +2,32 @@
+   "terminalId": "23612049",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "10018",
++  "machineNo": "11111",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "10018"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11111"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "350-31017767"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612066.json b/terminals/23612066.json
+index 221da88..409a3fa 100644
+--- a/terminals/23612066.json
++++ b/terminals/23612066.json
+@@ -2,22 +2,22 @@
+   "terminalId": "23612066",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "21127",
+-  "machineNo": "12221",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260724悠遊卡.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "350-31017784"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615850.json b/terminals/64615850.json
+index c7a4ea8..8dda511 100644
+--- a/terminals/64615850.json
++++ b/terminals/64615850.json
+@@ -2,22 +2,22 @@
+   "terminalId": "64615850",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "21127",
+-  "machineNo": "12221",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "118232819419"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615864.json b/terminals/64615864.json
+index e1c1642..e9fdc44 100644
+--- a/terminals/64615864.json
++++ b/terminals/64615864.json
+@@ -2,22 +2,22 @@
+   "terminalId": "64615864",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "11017",
+-  "machineNo": "11144",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "118232818979"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615888.json b/terminals/64615888.json
+index b4273f1..4e248ef 100644
+--- a/terminals/64615888.json
++++ b/terminals/64615888.json
+@@ -2,22 +2,22 @@
+   "terminalId": "64615888",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "21099",
+-  "machineNo": "12203",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "118232819359"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615901.json b/terminals/64615901.json
+index 1251b50..c9839c2 100644
+--- a/terminals/64615901.json
++++ b/terminals/64615901.json
+@@ -2,22 +2,22 @@
+   "terminalId": "64615901",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "10018",
+-  "machineNo": "11111",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "118232819699"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615902.json b/terminals/64615902.json
+index 8c88b88..f67eb4d 100644
+--- a/terminals/64615902.json
++++ b/terminals/64615902.json
+@@ -2,22 +2,22 @@
+   "terminalId": "64615902",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": "10014",
+-  "machineNo": "11118",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "000812660111790",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "序號S/N",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "118232819695"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615917.json b/terminals/64615917.json
+index 1367a24..0d3e812 100644
+--- a/terminals/64615917.json
++++ b/terminals/64615917.json
+@@ -2,22 +2,32 @@
+   "terminalId": "64615917",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "21127",
++  "machineNo": "12203",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "資產描述 (assetDescription)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "21127"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "12203"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "118232819725"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615922.json b/terminals/64615922.json
+index cd44d5f..e6fc1b5 100644
+--- a/terminals/64615922.json
++++ b/terminals/64615922.json
+@@ -2,22 +2,32 @@
+   "terminalId": "64615922",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "10014",
++  "machineNo": "11118",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "資產描述 (assetDescription)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "10014"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11118"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "118232818974"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615923.json b/terminals/64615923.json
+index 1582a16..27b21be 100644
+--- a/terminals/64615923.json
++++ b/terminals/64615923.json
+@@ -2,22 +2,32 @@
+   "terminalId": "64615923",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "10018",
++  "machineNo": "11111",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "資產描述 (assetDescription)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "10018"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11111"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "118232818973"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615928.json b/terminals/64615928.json
+index aed64dd..f72c54c 100644
+--- a/terminals/64615928.json
++++ b/terminals/64615928.json
+@@ -2,22 +2,32 @@
+   "terminalId": "64615928",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "11017",
++  "machineNo": "11144",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "資產描述 (assetDescription)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "11017"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11144"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "118232818969"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615984.json b/terminals/64615984.json
+index 42c9bd0..7d7d91b 100644
+--- a/terminals/64615984.json
++++ b/terminals/64615984.json
+@@ -2,22 +2,32 @@
+   "terminalId": "64615984",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "21099",
++  "machineNo": "12203",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260807台新刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-08",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "資產描述 (assetDescription)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "21099"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "12203"
++        },
++        {
++          "field": "序號S/N",
++          "oldValue": "",
++          "newValue": "118232819672"
+         }
+       ],
+       "remark": "",
+
+commit 8c8d5308f64ac77a6a8bdd78c61b125eed3648f8
+Author: David Chung <davidchung@beyondplaza.com.tw>
+Date:   Thu Aug 6 18:12:58 2026 +0800
+
+     17:41 資訊值機 20260806台新刷卡機資產 .xlsx
+    17:41 資訊值機 20260806聯合刷卡機資產.xlsx
+
+diff --git "a/terminals/20260806\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242 .xlsx" "b/terminals/20260806\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242 .xlsx"
+new file mode 100644
+index 0000000..66995a6
+Binary files /dev/null and "b/terminals/20260806\345\217\260\346\226\260\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242 .xlsx" differ
+diff --git "a/terminals/20260806\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" "b/terminals/20260806\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx"
+new file mode 100644
+index 0000000..e6a597e
+Binary files /dev/null and "b/terminals/20260806\350\201\257\345\220\210\345\210\267\345\215\241\346\251\237\350\263\207\347\224\242.xlsx" differ
+diff --git a/terminals/23611914.json b/terminals/23611914.json
+index c373553..1102616 100644
+--- a/terminals/23611914.json
++++ b/terminals/23611914.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23611914",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "13001",
+-  "machineNo": "11108",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23611958.json b/terminals/23611958.json
+index 934c78e..fcf070d 100644
+--- a/terminals/23611958.json
++++ b/terminals/23611958.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23611958",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "15003",
+-  "machineNo": "11128",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23611963.json b/terminals/23611963.json
+index f5953f4..d4be260 100644
+--- a/terminals/23611963.json
++++ b/terminals/23611963.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23611963",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "13009",
++  "machineNo": "11125",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "13009"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11125"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23611970.json b/terminals/23611970.json
+index 18b906b..7056b02 100644
+--- a/terminals/23611970.json
++++ b/terminals/23611970.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23611970",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "13001",
++  "machineNo": "11108",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "13001"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11108"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612000.json b/terminals/23612000.json
+index d927176..1c99a1e 100644
+--- a/terminals/23612000.json
++++ b/terminals/23612000.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23612000",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "18107",
++  "machineNo": "11114",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "18107"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11114"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612053.json b/terminals/23612053.json
+index 9c2ab35..2b1570c 100644
+--- a/terminals/23612053.json
++++ b/terminals/23612053.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612053",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "18107",
+-  "machineNo": "11114",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23612058.json b/terminals/23612058.json
+index 4dfc65e..18b5534 100644
+--- a/terminals/23612058.json
++++ b/terminals/23612058.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23612058",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "15003",
++  "machineNo": "11128",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "15003"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11128"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612062.json b/terminals/23612062.json
+index 119b3c6..7d7af53 100644
+--- a/terminals/23612062.json
++++ b/terminals/23612062.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612062",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "12020",
+-  "machineNo": "11165",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/23612068.json b/terminals/23612068.json
+index adc5227..d928736 100644
+--- a/terminals/23612068.json
++++ b/terminals/23612068.json
+@@ -2,22 +2,27 @@
+   "terminalId": "23612068",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "12020",
++  "machineNo": "11165",
+   "merchantCode": "1301003669",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "12020"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11165"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/23612084.json b/terminals/23612084.json
+index 850ed29..6c29e76 100644
+--- a/terminals/23612084.json
++++ b/terminals/23612084.json
+@@ -2,16 +2,16 @@
+   "terminalId": "23612084",
+   "category": "聯合刷卡機",
+   "assetDescription": "AS350 PINpad Terminal",
+-  "counterNo": "13009",
+-  "machineNo": "11125",
++  "counterNo": null,
++  "machineNo": null,
+   "merchantCode": "1301003669",
+-  "assetStatus": "使用中",
+-  "warehouseStock": false,
+-  "sourceFile": "20260724聯合.xlsx",
++  "assetStatus": "倉庫備品",
++  "warehouseStock": true,
++  "sourceFile": "20260806聯合刷卡機資產.xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+diff --git a/terminals/64615856.json b/terminals/64615856.json
+index c980d63..5668b66 100644
+--- a/terminals/64615856.json
++++ b/terminals/64615856.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64615856",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "18107",
++  "machineNo": "11114",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806台新刷卡機資產 .xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "18107"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11114"
+         }
+       ],
+       "remark": "",
+diff --git a/terminals/64615893.json b/terminals/64615893.json
+index f08c03c..7b2cbe8 100644
+--- a/terminals/64615893.json
++++ b/terminals/64615893.json
+@@ -2,22 +2,27 @@
+   "terminalId": "64615893",
+   "category": "台新刷卡機",
+   "assetDescription": "V3C",
+-  "counterNo": null,
+-  "machineNo": null,
++  "counterNo": "15003",
++  "machineNo": "11128",
+   "merchantCode": "000812660111790",
+-  "assetStatus": "倉庫備品",
+-  "warehouseStock": true,
+-  "sourceFile": "20260724台新.xlsx",
++  "assetStatus": "",
++  "warehouseStock": false,
++  "sourceFile": "20260806台新刷卡機資產 .xlsx",
+   "adjustmentHistory": [
+     {
+-      "date": "",
+-      "operator": "",
++      "date": "2026-08-06",
++      "operator": "davidchung",
+       "action": "",
+       "changes": [
+         {
+-          "field": "",
++          "field": "櫃檯編號 (counterNo)",
+           "oldValue": "",
+-          "newValue": ""
++          "newValue": "15003"
++        },
++        {
++          "field": "機台編號 (machineNo)",
++          "oldValue": "",
++          "newValue": "11128"
+         }
+       ],
+       "remark": "",
