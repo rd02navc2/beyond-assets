@@ -2,25 +2,30 @@
   "terminalId": "64615961",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "21100",
+  "machineNo": "21100",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260806台新刷卡機資產 .xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0908台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-06",
-      "operator": "davidchung",
+      "date": "2026-09-08",
+      "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "櫃檯編號 (counterNo)",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "21100"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "21100"
         }
       ],
-      "remark": "",
+      "remark": "思綢織鹿",
       "commitId": ""
     }
   ]

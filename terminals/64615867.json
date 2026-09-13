@@ -2,25 +2,30 @@
   "terminalId": "64615867",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "11015",
-  "machineNo": "11137",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "000812660111790",
-  "assetStatus": "使用中",
-  "warehouseStock": false,
-  "sourceFile": "20260724台新.xlsx",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-09-10",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
+          "field": "counterNo",
+          "oldValue": "11015",
+          "newValue": ""
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "11137",
           "newValue": ""
         }
       ],
-      "remark": "",
+      "remark": "撤櫃",
       "commitId": ""
     }
   ]
