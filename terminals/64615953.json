@@ -1,23 +1,28 @@
 {
   "terminalId": "64615953",
   "category": "台新刷卡機",
-  "assetDescription": "台新刷卡機",
+  "assetDescription": "V3C",
   "counterNo": "56118",
   "machineNo": "23546",
   "merchantCode": "000812660111790",
-  "assetStatus": "彩繪樹",
+  "assetStatus": "",
   "warehouseStock": false,
-  "sourceFile": "20260908台新刷卡機.xlsx",
+  "sourceFile": "0908台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "櫃檯編號 (counterNo)",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "56118"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "23546"
         }
       ],
       "remark": "彩繪樹",

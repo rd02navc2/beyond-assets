@@ -1,13 +1,13 @@
 {
   "terminalId": "64615849",
   "category": "台新刷卡機",
-  "assetDescription": "台新刷卡機",
+  "assetDescription": "V3C",
   "counterNo": "21123",
   "machineNo": "12202",
   "merchantCode": "000812660111790",
-  "assetStatus": "FRAAS",
+  "assetStatus": "",
   "warehouseStock": false,
-  "sourceFile": "20260908台新刷卡機.xlsx",
+  "sourceFile": "0908台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
       "date": "2026-09-08",
@@ -15,12 +15,17 @@
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "櫃檯編號 (counterNo)",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "21123"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "12202"
         }
       ],
-      "remark": "FRAAS",
+      "remark": "FUJI富士",
       "commitId": ""
     }
   ]
