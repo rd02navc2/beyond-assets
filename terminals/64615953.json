@@ -2,19 +2,30 @@
   "terminalId": "64615953",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "56118",
+  "machineNo": "23546",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260805刷卡機更換.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0908台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-06",
-      "operator": "davidchung",
+      "date": "2026-09-08",
+      "operator": "",
       "action": "",
-      "changes": [],
-      "remark": "5F倉庫",
+      "changes": [
+        {
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "",
+          "newValue": "56118"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "23546"
+        }
+      ],
+      "remark": "彩繪樹",
       "commitId": ""
     }
   ]

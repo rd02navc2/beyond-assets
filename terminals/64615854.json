@@ -1,0 +1,21 @@
+{
+  "terminalId": "64615854",
+  "category": "台新刷卡機",
+  "assetDescription": "V3C",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": "000812660111790",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "",
+  "adjustmentHistory": [
+    {
+      "date": "2026-09-07",
+      "operator": "",
+      "action": "",
+      "changes": [],
+      "remark": "5F倉庫",
+      "commitId": ""
+    }
+  ]
+}

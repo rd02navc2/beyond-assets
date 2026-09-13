@@ -2,25 +2,30 @@
   "terminalId": "64615944",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "50080",
+  "machineNo": "23504",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724台新.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0908台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-09-08",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "櫃檯編號 (counterNo)",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "50080"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "",
+          "newValue": "23504"
         }
       ],
-      "remark": "",
+      "remark": "FUJI富士",
       "commitId": ""
     }
   ]
