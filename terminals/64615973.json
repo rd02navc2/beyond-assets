@@ -4,28 +4,23 @@
   "assetDescription": "V3C",
   "counterNo": null,
   "machineNo": null,
-  "merchantCode": null,
-  "assetStatus": "蔡佳瑾",
-  "warehouseStock": false,
-  "sourceFile": "",
+  "merchantCode": "000812660111790",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "0913台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-31",
+      "date": "2026-09-13",
       "operator": "",
-      "action": "更換",
+      "action": "",
       "changes": [
         {
-          "field": "counterNo",
+          "field": "",
           "oldValue": "",
-          "newValue": "21109"
-        },
-        {
-          "field": "machineNo",
-          "oldValue": "",
-          "newValue": "12234"
+          "newValue": ""
         }
       ],
-      "remark": "",
+      "remark": "5F倉庫",
       "commitId": ""
     }
   ]
