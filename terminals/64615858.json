@@ -4,28 +4,28 @@
   "assetDescription": "V3C",
   "counterNo": null,
   "machineNo": null,
-  "merchantCode": null,
+  "merchantCode": "000812660111790",
   "assetStatus": "倉庫備品",
   "warehouseStock": true,
   "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "2026-08-31",
+      "date": "2026-09-14",
       "operator": "",
-      "action": "撤櫃",
+      "action": "",
       "changes": [
         {
           "field": "counterNo",
-          "oldValue": "31018",
+          "oldValue": "56117",
           "newValue": ""
         },
         {
           "field": "machineNo",
-          "oldValue": "12344",
+          "oldValue": "23545",
           "newValue": ""
         }
       ],
-      "remark": "",
+      "remark": "報修更換",
       "commitId": ""
     }
   ]

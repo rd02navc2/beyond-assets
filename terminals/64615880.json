@@ -5,27 +5,27 @@
   "counterNo": null,
   "machineNo": null,
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
+  "assetStatus": "fun box",
+  "warehouseStock": false,
   "sourceFile": "",
   "adjustmentHistory": [
     {
-      "date": "2026-08-05",
+      "date": "2026-09-14",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "counterNo",
-          "oldValue": "56120",
-          "newValue": ""
+          "oldValue": "",
+          "newValue": "56117"
         },
         {
           "field": "machineNo",
-          "oldValue": "23535",
-          "newValue": ""
+          "oldValue": "",
+          "newValue": "23545"
         }
       ],
-      "remark": "撤櫃",
+      "remark": "報修更換",
       "commitId": ""
     }
   ]
