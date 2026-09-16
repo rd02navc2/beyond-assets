@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>資訊設備換機歷史儀表板</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="/js/vue.global.prod.js"></script>
+<script src="/js/chart.umd.min.js"></script>
+<script src="/js/xlsx.full.min.js"></script>
 <style>
   :root{
     --bg:#f5f4fb;
@@ -790,7 +790,8 @@ function parseGitLogText(text){
       }
     }
     const entries=[]; let curEntry=null, pending=null;
-    for(const ln of plusOnly){
+    // for(const ln of plusOnly){
+    for(const ln of contextPlus){
       const m = ln.match(/^\s*"(\w+)"\s*:\s*(.*?)\s*$/);
       if(!m) continue;
       const key=m[1], val=m[2];
