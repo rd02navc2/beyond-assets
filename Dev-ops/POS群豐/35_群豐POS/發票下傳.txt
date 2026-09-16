@@ -1,8 +1,0 @@
-zf要先執行排程取得新的機號
-取得POS機資料
-com.emis.schedule.beyond.BeyondGetPosData
-然後去取發票資料
-取得比漾發票簿資料
-com.emis.schedule.beyond.BeyondGetInvoiceNo
-然後到e04作業表頭有個發票下傳的功能
-可以做櫃號或是單獨機號的下傳
