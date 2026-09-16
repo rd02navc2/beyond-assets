@@ -1,9 +1,0 @@
-version: '3.8'
-services:
-  git-dashboard:
-    build: .
-    ports:
-      - "8089:3000"  # 外部 8089 對應內部 3000，外部電腦可以用 192.168.5.80:8089 開啟
-    environment:
-      - PORT=3000
-    restart: always
