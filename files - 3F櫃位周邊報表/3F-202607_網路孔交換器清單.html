@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>3F-202607 網路孔／交換器對應清單</title>
+<style>
+  body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+    margin: 24px;
+    color: #222;
+    background: #fafafa;
+  }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 18px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  caption { text-align: left; font-weight: bold; margin-bottom: 8px; font-size: 15px; }
+  th, td {
+    border: 1px solid #d0d0d0;
+    padding: 6px 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+  th {
+    background: #4472C4;
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+  td:nth-child(2), td:nth-child(7) { text-align: left; }
+  tr:nth-child(even) { background: #f4f6fb; }
+  tr.dup { background: #fdecea; }
+  tr.placeholder { background: #fff6df; }
+  td.note { color: #c00000; font-weight: bold; text-align: left; font-size: 12px; }
+  code { font-family: Consolas, monospace; font-size: 12.5px; }
+  .badge { display:inline-block; font-size: 11px; padding: 1px 6px; border-radius: 10px; margin-left: 4px; }
+  .badge.ok { background:#d6f5d6; color:#1a7a1a; }
+  .badge.guess { background:#fde2b8; color:#a05a00; }
+  .legend {
+    margin-top: 20px;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 14px 18px;
+    border-radius: 6px;
+  }
+  .legend b { color: #c00000; }
+  .table-wrap { max-height: 640px; overflow: auto; }
+</style>
+</head>
+<body>
+  <h1>3F-202607 網路孔（EP）／網路交換器（SW）對應清單</h1>
+  <div class="subtitle">資料來源：3F-202607.pdf 共 27 筆網路孔資料（含位置12預設值），分屬 9 台交換器</div>
+
+  <div class="table-wrap">
+  <table>
+    <caption>依位置編號從小到大排序</caption>
+    <thead>
+      <tr>
+        <th>位置編號</th>
+        <th>網路孔序號檔 (EP)</th>
+        <th>Port_藍</th>
+        <th>Port_白</th>
+        <th>Port_灰</th>
+        <th>交換器 Switch IP</th>
+        <th>交換器序號檔 (SW)</th>
+        <th>位置代號(格線)</th>
+        <th>備註</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    <tr>
+      <td>1</td>
+      <td><code>A003FEP0001.json</code></td>
+      <td>3</td>
+      <td>11</td>
+      <td>7</td>
+      <td>10.255.5.132</td>
+      <td><code>A003FSW010255005132.json</code></td>
+      <td>M1 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code>A003FEP0002.json</code></td>
+      <td>15</td>
+      <td>19</td>
+      <td>23</td>
+      <td>10.255.5.132</td>
+      <td><code>A003FSW010255005132.json</code></td>
+      <td>M2 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code>A003FEP0003.json</code></td>
+      <td>13</td>
+      <td>17</td>
+      <td>21</td>
+      <td>10.255.5.132</td>
+      <td><code>A003FSW010255005132.json</code></td>
+      <td>L1 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code>A003FEP0004.json</code></td>
+      <td>14</td>
+      <td>18</td>
+      <td>22</td>
+      <td>10.255.5.132</td>
+      <td><code>A003FSW010255005132.json</code></td>
+      <td>L2 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code>A003FEP0005.json</code></td>
+      <td>1</td>
+      <td>5</td>
+      <td>9</td>
+      <td>10.255.5.133</td>
+      <td><code>A003FSW010255005133.json</code></td>
+      <td>L3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code>A003FEP0006.json</code></td>
+      <td>1</td>
+      <td>5</td>
+      <td>9</td>
+      <td>10.255.5.131</td>
+      <td><code>A003FSW010255005131.json</code></td>
+      <td>L4 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code>A003FEP0007.json</code></td>
+      <td>2</td>
+      <td>6</td>
+      <td>10</td>
+      <td>10.255.5.34</td>
+      <td><code>A003FSW010255005034.json</code></td>
+      <td>J3 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code>A003FEP0008.json</code></td>
+      <td>1</td>
+      <td>5</td>
+      <td>9</td>
+      <td>10.255.5.34</td>
+      <td><code>A003FSW010255005034.json</code></td>
+      <td>J3 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code>A003FEP0009.json</code></td>
+      <td>13</td>
+      <td>17</td>
+      <td>21</td>
+      <td>10.255.5.133</td>
+      <td><code>A003FSW010255005133.json</code></td>
+      <td>J4 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code>A003FEP0010.json</code></td>
+      <td>15</td>
+      <td>19</td>
+      <td>23</td>
+      <td>10.255.5.32</td>
+      <td><code>A003FSW010255005032.json</code></td>
+      <td>I1 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr class="dup">
+      <td>11</td>
+      <td><code>A003FEP0011_DUP1.json</code></td>
+      <td>16</td>
+      <td>20</td>
+      <td>24</td>
+      <td>10.255.5.33</td>
+      <td><code>A003FSW010255005033.json</code></td>
+      <td>I2 <span class="badge guess">推估</span></td>
+      <td class="note">⚠ 需再確認歸屬現場實際位置-> 待現場確認</td>
+    </tr>
+    <tr class="dup">
+      <td>11</td>
+      <td><code>A003FEP0011_DUP2.json</code></td>
+      <td>13</td>
+      <td>17</td>
+      <td>21</td>
+      <td>10.255.5.34</td>
+      <td><code>A003FSW010255005034.json</code></td>
+      <td>I2 <span class="badge guess">推估</span></td>
+      <td class="note">⚠ 需再確認歸屬現場實際位置-> 待現場確認</td>
+    </tr>
+    <tr class="placeholder">
+      <td>12</td>
+      <td><code>A003FEP0012.json</code></td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>未標示</td>
+      <td><code>無</code></td>
+      <td>I2 <span class="badge guess">推估</span></td>
+      <td class="note">⚠原圖無對應交換器/線路標示，Port為預設值0 -> 待現場確認</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code>A003FEP0013.json</code></td>
+      <td>1</td>
+      <td>5</td>
+      <td>9</td>
+      <td>10.255.5.35</td>
+      <td><code>A003FSW010255005035.json</code></td>
+      <td>I4 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code>A003FEP0014.json</code></td>
+      <td>14</td>
+      <td>18</td>
+      <td>22</td>
+      <td>10.255.5.32</td>
+      <td><code>A003FSW010255005032.json</code></td>
+      <td>H1 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code>A003FEP0015.json</code></td>
+      <td>4</td>
+      <td>8</td>
+      <td>12</td>
+      <td>10.255.5.33</td>
+      <td><code>A003FSW010255005033.json</code></td>
+      <td>H3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code>A003FEP0016.json</code></td>
+      <td>4</td>
+      <td>8</td>
+      <td>12</td>
+      <td>10.255.5.31</td>
+      <td><code>A003FSW010255005031.json</code></td>
+      <td>H4 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code>A003FEP0017.json</code></td>
+      <td>13</td>
+      <td>17</td>
+      <td>21</td>
+      <td>10.255.5.32</td>
+      <td><code>A003FSW010255005032.json</code></td>
+      <td>G1 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code>A003FEP0018.json</code></td>
+      <td>14</td>
+      <td>17</td>
+      <td>21</td>
+      <td>10.255.5.33</td>
+      <td><code>A003FSW010255005033.json</code></td>
+      <td>G2 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code>A003FEP0019.json</code></td>
+      <td>3</td>
+      <td>7</td>
+      <td>11</td>
+      <td>10.255.5.33</td>
+      <td><code>A003FSW010255005033.json</code></td>
+      <td>G3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><code>A003FEP0020.json</code></td>
+      <td>16</td>
+      <td>20</td>
+      <td>24</td>
+      <td>10.255.5.83</td>
+      <td><code>A003FSW010255005083.json</code></td>
+      <td>G3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td><code>A003FEP0021.json</code></td>
+      <td>2</td>
+      <td>10</td>
+      <td>6</td>
+      <td>10.255.5.35</td>
+      <td><code>A003FSW010255005035.json</code></td>
+      <td>G4 <span class="badge guess">推估</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><code>A003FEP0022.json</code></td>
+      <td>3</td>
+      <td>7</td>
+      <td>11</td>
+      <td>10.255.5.34</td>
+      <td><code>A003FSW010255005034.json</code></td>
+      <td>F1 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td><code>A003FEP0023.json</code></td>
+      <td>13</td>
+      <td>17</td>
+      <td>21</td>
+      <td>10.255.5.83</td>
+      <td><code>A003FSW010255005083.json</code></td>
+      <td>F3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td><code>A003FEP0024.json</code></td>
+      <td>14</td>
+      <td>18</td>
+      <td>22</td>
+      <td>10.255.5.83</td>
+      <td><code>A003FSW010255005083.json</code></td>
+      <td>F3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td><code>A003FEP0025.json</code></td>
+      <td>1</td>
+      <td>5</td>
+      <td>9</td>
+      <td>10.255.5.33</td>
+      <td><code>A003FSW010255005033.json</code></td>
+      <td>F3 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td><code>A003FEP0026.json</code></td>
+      <td>16</td>
+      <td>20</td>
+      <td>24</td>
+      <td>10.255.5.31</td>
+      <td><code>A003FSW010255005031.json</code></td>
+      <td>F4 <span class="badge ok">確認</span></td>
+      <td class="note"></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="legend">
+    <div><b>命名規則：</b></div>
+    <div>網路孔序號檔 = A003FEP + 位置編號(4碼補零) + .json 例：(16) → A003FEP0016.json</div>
+    <div>交換器序號檔 = A003FSW + IP各碼補3碼串接 + .json 例：10.255.5.31 → A003FSW010255005031.json</div>
+
+    <div style="margin-top:10px;"><b>位置代號(格線)說明：</b></div>
+    <div>原圖無「天花板／地板」等安裝方式圖例，改以建築平面格線代號(欄字+列數，如 H4、G3)標示各網路孔實際位置。
+      <span class="badge ok">確認</span> 表示圖面上緊鄰有紅字格線代號可直接判讀；
+      <span class="badge guess">推估</span> 表示該位置未直接標示代號，依相鄰已知格線與盒體對齊關係推算，建議現場核對。</div>
+
+    <div style="margin-top:10px;"><b>資料異常提醒：</b></div>
+    <div>位置編號 [11] 在原圖中重複出現，分屬 10.255.5.33 與 10.255.5.34 兩台交換器，推測為同一網路孔盒(格線 I2)內有兩個實體孔位皆標示為「11」，分屬不同交換器，本清單以檔名加註 _DUP1 / _DUP2 區分，請確認正確歸屬。</div>
+    <div>位置編號 12：與編號11同一網路孔盒(格線 I2)，但原圖僅標註編號11的交換器/線路資料，編號12無對應標示。已依指示產生 A003FEP0012.json，Port_藍/白/灰 預設補0，Switch IP 標示為「未標示」，待現場確認後更新。</div>
+  </div>
+</body>
+</html>
