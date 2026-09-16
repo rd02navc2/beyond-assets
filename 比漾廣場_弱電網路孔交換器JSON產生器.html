@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>弱電網路孔／交換器 JSON 產生器</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+  /* ---- 日系・淡藍 簡約主題 ---- */
+  :root {
+    --ink:        #33424f;      /* 本文：藍灰墨色 */
+    --ink-soft:   #6d7c88;      /* 副文字 */
+    --paper:      #f6f9fb;      /* 底色：宣紙般的極淡藍白 */
+    --panel:      #ffffff;      /* 卡片底 */
+    --line:       #dfe8ee;      /* 細邊線 */
+    --indigo:     #35608a;      /* 主色：藍染 */
+    --indigo-deep:#24476b;      /* 主色（深）：按下/hover */
+    --sora:       #eaf3f9;      /* 淡空色：次要底色、hover */
+    --mist:       #cfe1ec;      /* 霧藍：邊框強調 */
+    --matcha:     #4f7d5c;      /* 新增／成功：抹茶綠 */
+    --kaki:       #b8863f;      /* 更新：柿色 */
+    --beni:       #b2495a;      /* 警示：紅色（べにいろ） */
+    --radius: 3px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans TC", "Noto Sans JP", "Microsoft JhengHei", Arial, sans-serif;
+    margin: 0;
+    padding: 32px 40px 48px;
+    background: var(--paper);
+    background-image:
+      linear-gradient(180deg, #eef5f9 0%, var(--paper) 220px);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ---- 品牌標頭 / 比漾 標誌 ---- */
+  .brandbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--mist);
+  }
+  .brand-mark {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--indigo);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    flex: none;
+    font-weight: 600;
+    box-shadow: 0 0 0 3px var(--sora), 0 0 0 4px var(--mist);
+  }
+  .brand-text { line-height: 1.3; }
+  .brand-text .cn { font-size: 15px; font-weight: 700; color: var(--indigo-deep); letter-spacing: 2px; }
+  .brand-text .en { font-size: 10.5px; color: var(--ink-soft); letter-spacing: 3px; }
+  .brandbar .divider { width: 1px; height: 30px; background: var(--line); margin: 0 4px; }
+
+  h1 { font-size: 19px; margin: 0 0 4px; font-weight: 700; color: var(--ink); letter-spacing: .5px; }
+  .subtitle { color: var(--ink-soft); font-size: 12.5px; margin-bottom: 18px; }
+  .banner {
+    background: var(--sora);
+    border: 1px solid var(--mist);
+    color: var(--indigo-deep);
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 12.5px;
+    margin-bottom: 18px;
+    border-left: 3px solid var(--indigo);
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 18px;
+  }
+  .toolbar label.filebtn {
+    background: var(--indigo);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    font-size: 12.5px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: background .15s ease;
+  }
+  .toolbar label.filebtn:hover { background: var(--indigo-deep); }
+  .toolbar input[type=file] { display: none; }
+  button {
+    background: #fff;
+    border: 1px solid var(--mist);
+    color: var(--indigo-deep);
+    border-radius: var(--radius);
+    padding: 8px 16px;
+    font-size: 12.5px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  button:hover:not(:disabled) { background: var(--sora); border-color: var(--indigo); }
+  button.primary { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+  button.primary:hover { background: var(--indigo-deep); border-color: var(--indigo-deep); }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  #fileName { font-size: 12px; color: var(--ink-soft); }
+  .stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--mist);
+    border-radius: var(--radius);
+    padding: 10px 18px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    min-width: 118px;
+  }
+  .stat-card .num { font-size: 22px; font-weight: 700; color: var(--indigo); display: block; margin-bottom: 2px; }
+  .stat-card.anomaly { border-top-color: var(--beni); }
+  .stat-card.anomaly .num { color: var(--beni); }
+  .stat-card.new { border-top-color: var(--matcha); }
+  .stat-card.new .num { color: var(--matcha); }
+  .stat-card.updated { border-top-color: var(--kaki); }
+  .stat-card.updated .num { color: var(--kaki); }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 10px 16px;
+    background: var(--sora);
+    border-bottom: 1px solid var(--line);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--indigo-deep);
+    letter-spacing: .5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 7px 10px; text-align: center; }
+  th { background: #eef4f8; color: var(--ink-soft); font-weight: 600; position: sticky; top: 0; }
+  td.left, th.left { text-align: left; }
+  tr:hover { background: var(--sora); }
+  .table-wrap { max-height: 480px; overflow: auto; }
+  .badge { display: inline-block; font-size: 10.5px; padding: 1px 8px; border-radius: 10px; font-weight: 600; }
+  .badge.new { background: #e4efe6; color: var(--matcha); }
+  .badge.updated { background: #f3e9d8; color: var(--kaki); }
+  .badge.unchanged { background: #eef1f3; color: var(--ink-soft); }
+  code { font-family: Consolas, monospace; font-size: 11.5px; color: var(--indigo-deep); }
+  .anomaly-row { background: #fbeef0; }
+  a.preview-link { color: var(--indigo); cursor: pointer; text-decoration: underline; font-size: 12px; }
+  #modalBg {
+    display: none; position: fixed; inset: 0; background: rgba(36,55,71,0.45);
+    align-items: center; justify-content: center; z-index: 50;
+  }
+  #modalBox {
+    background: #fff; border-radius: var(--radius); width: min(640px, 90vw); max-height: 80vh;
+    overflow: auto; padding: 20px; border-top: 3px solid var(--indigo);
+  }
+  #modalBox h3 { margin-top: 0; font-size: 13.5px; color: var(--indigo-deep); }
+  #modalBox pre { background: var(--sora); padding: 12px; border-radius: var(--radius); font-size: 11.5px; white-space: pre-wrap; word-break: break-all; color: var(--ink); }
+  #modalClose { float: right; cursor: pointer; font-size: 18px; color: var(--ink-soft); }
+  .empty-state { padding: 34px; text-align: center; color: var(--ink-soft); font-size: 13px; border: 1px dashed var(--mist); border-radius: var(--radius); background: var(--panel); }
+  .footer-note { font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+</style>
+</head>
+<body>
+
+  <div class="brandbar">
+    <div class="brand-mark">比漾</div>
+    <div class="brand-text">
+      <div class="cn">比漾廣場</div>
+      <div class="en">BEYOND PLAZA</div>
+    </div>
+    <div class="divider"></div>
+    <div class="brand-text">
+      <div class="cn" style="color:var(--ink); font-size:13px;">弱電工務組</div>
+      <div class="en" style="letter-spacing:2px;">FACILITY / IT INFRASTRUCTURE</div>
+    </div>
+  </div>
+
+  <h1>弱電網路孔／交換器 JSON 產生器</h1>
+  <div class="subtitle">依「全館弱電系統資料既圖面彙整.xlsx」自動產生統一命名的孔位(EP)／交換器(SW) JSON 檔，並自動追蹤版本與修訂紀錄</div>
+
+  <div class="banner">
+    ⚠ 本工具使用瀏覽器端「共用資料夾」儲存空間來記錄每個 JSON 檔目前的版本與修訂紀錄，此資料為<b>共用</b>性質，任何開啟此頁面的使用者都會看到相同的版本記錄與比對結果。請勿存放機密資訊於備註欄位。
+  </div>
+
+  <div class="toolbar">
+    <label class="filebtn">
+      上傳 / 更新 Excel 檔
+      <input type="file" id="fileInput" accept=".xlsx,.xls">
+    </label>
+    <span id="fileName">尚未上傳，目前使用內建預設資料（3F + 5F）</span>
+    <button class="primary" id="btnGenerate">產生 / 更新 JSON</button>
+    <button id="btnDownloadZip" disabled>下載全部 JSON (ZIP)</button>
+    <button id="btnDownloadManifest" disabled>下載清單 (manifest.json)</button>
+  </div>
+
+  <div class="stats" id="statsRow" style="display:none;">
+    <div class="stat-card"><div class="num" id="statTotal">0</div>總檔案數</div>
+    <div class="stat-card new"><div class="num" id="statNew">0</div>新增</div>
+    <div class="stat-card updated"><div class="num" id="statUpdated">0</div>版本更新</div>
+    <div class="stat-card"><div class="num" id="statUnchanged">0</div>未變更</div>
+    <div class="stat-card anomaly"><div class="num" id="statAnomaly">0</div>異常項目</div>
+  </div>
+
+  <div class="panel" id="anomalyPanel" style="display:none;">
+    <div class="panel-header">⚠ 異常清單（已自動採規則修正，請人工複核）</div>
+    <div class="table-wrap"><table id="anomalyTable">
+      <thead><tr><th class="left">類型</th><th class="left">說明</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+
+  <div class="panel" id="epPanel" style="display:none;">
+    <div class="panel-header">孔位 JSON (EP)　<span id="epCount"></span></div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>所在區域</th><th>位置編號</th><th class="left">孔位JSON檔名</th>
+        <th>版本</th><th>狀態</th><th>預覽</th>
+      </tr></thead>
+      <tbody id="epBody"></tbody>
+    </table></div>
+  </div>
+
+  <div class="panel" id="swPanel" style="display:none;">
+    <div class="panel-header">交換器 JSON (SW)　<span id="swCount"></span></div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>所在區域</th><th>交換器IP</th><th class="left">交換器JSON檔名</th>
+        <th>孔位數</th><th>版本</th><th>狀態</th><th>預覽</th>
+      </tr></thead>
+      <tbody id="swBody"></tbody>
+    </table></div>
+  </div>
+
+  <div class="empty-state" id="emptyState">尚未產生資料。請按「產生 / 更新 JSON」開始（可直接使用內建資料，或先上傳新版 Excel）。</div>
+
+  <div class="footer-note">
+    命名規則：孔位／交換器 JSON 檔名一律採用 Excel 表中「孔位JSON檔名」「交換器JSON檔名」欄位所載名稱；若偵測到重複或不一致，將依位置編號數字自動重新推算檔名，或以同一交換器IP的多數決檔名為準，並於備註中保留原始記載。
+  </div>
+
+  <div id="modalBg"><div id="modalBox">
+    <span id="modalClose">✕</span>
+    <h3 id="modalTitle"></h3>
+    <pre id="modalContent"></pre>
+  </div></div>
+
+<script id="default-data" type="application/json">[{"序": 1, "位置編號": 1, "位置代號(格線)": "M1", "所在區域": "3F", "藍色埠": 3, "白色埠": 11, "灰色埠": 7, "交換器 IP": "10.255.5.132", "孔位JSON檔名": "A003FEP0001.json", "交換器JSON檔名": "A003FSW010255005132.json", "備註": null}, {"序": 2, "位置編號": 2, "位置代號(格線)": "M2", "所在區域": "3F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.132", "孔位JSON檔名": "A003FEP0002.json", "交換器JSON檔名": "A003FSW010255005132.json", "備註": null}, {"序": 3, "位置編號": 3, "位置代號(格線)": "L1", "所在區域": "3F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.132", "孔位JSON檔名": "A003FEP0003.json", "交換器JSON檔名": "A003FSW010255005132.json", "備註": null}, {"序": 4, "位置編號": 4, "位置代號(格線)": "L2", "所在區域": "3F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.132", "孔位JSON檔名": "A003FEP0004.json", "交換器JSON檔名": "A003FSW010255005132.json", "備註": null}, {"序": 5, "位置編號": 5, "位置代號(格線)": "L3", "所在區域": "3F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.133", "孔位JSON檔名": "A003FEP0005.json", "交換器JSON檔名": "A003FSW010255005133.json", "備註": null}, {"序": 6, "位置編號": 6, "位置代號(格線)": "L4", "所在區域": "3F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.131", "孔位JSON檔名": "A003FEP0006.json", "交換器JSON檔名": "A003FSW010255005131.json", "備註": null}, {"序": 7, "位置編號": 7, "位置代號(格線)": "J3", "所在區域": "3F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.34", "孔位JSON檔名": "A003FEP0007.json", "交換器JSON檔名": "A003FSW010255005034.json", "備註": null}, {"序": 8, "位置編號": 8, "位置代號(格線)": "J3", "所在區域": "3F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.34", "孔位JSON檔名": "A003FEP0008.json", "交換器JSON檔名": "A003FSW010255005034.json", "備註": null}, {"序": 9, "位置編號": 9, "位置代號(格線)": "J4", "所在區域": "3F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.133", "孔位JSON檔名": "A003FEP0009.json", "交換器JSON檔名": "A003FSW010255005133.json", "備註": null}, {"序": 10, "位置編號": 10, "位置代號(格線)": "I1", "所在區域": "3F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.32", "孔位JSON檔名": "A003FEP0010.json", "交換器JSON檔名": "A003FSW010255005032.json", "備註": null}, {"序": 11, "位置編號": 11, "位置代號(格線)": "I2", "所在區域": "3F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.33", "孔位JSON檔名": "A003FEP0011_DUP1.json", "交換器JSON檔名": "A003FSW010255005033.json", "備註": null}, {"序": 12, "位置編號": 11, "位置代號(格線)": "I2", "所在區域": "3F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.34", "孔位JSON檔名": "A003FEP0011_DUP2.json", "交換器JSON檔名": "A003FSW010255005034.json", "備註": null}, {"序": 13, "位置編號": 12, "位置代號(格線)": "I2", "所在區域": "3F", "藍色埠": 0, "白色埠": 0, "灰色埠": 0, "交換器 IP": "未標示", "孔位JSON檔名": "A003FEP0012.json", "交換器JSON檔名": "無", "備註": "⚠原圖無對應交換器/線路標示，Port為預設值0 -> 待現場確認"}, {"序": 14, "位置編號": 13, "位置代號(格線)": "I4", "所在區域": "3F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.35", "孔位JSON檔名": "A003FEP0013.json", "交換器JSON檔名": "A003FSW010255005035.json", "備註": null}, {"序": 15, "位置編號": 14, "位置代號(格線)": "H1", "所在區域": "3F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.32", "孔位JSON檔名": "A003FEP0014.json", "交換器JSON檔名": "A003FSW010255005032.json", "備註": null}, {"序": 16, "位置編號": 15, "位置代號(格線)": "H3", "所在區域": "3F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.33", "孔位JSON檔名": "A003FEP0015.json", "交換器JSON檔名": "A003FSW010255005033.json", "備註": null}, {"序": 17, "位置編號": 16, "位置代號(格線)": "H4", "所在區域": "3F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.31", "孔位JSON檔名": "A003FEP0016.json", "交換器JSON檔名": "A003FSW010255005031.json", "備註": null}, {"序": 18, "位置編號": 17, "位置代號(格線)": "G1", "所在區域": "3F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.32", "孔位JSON檔名": "A003FEP0017.json", "交換器JSON檔名": "A003FSW010255005032.json", "備註": null}, {"序": 19, "位置編號": 18, "位置代號(格線)": "G2", "所在區域": "3F", "藍色埠": 14, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.33", "孔位JSON檔名": "A003FEP0018.json", "交換器JSON檔名": "A003FSW010255005033.json", "備註": null}, {"序": 20, "位置編號": 19, "位置代號(格線)": "G3", "所在區域": "3F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.33", "孔位JSON檔名": "A003FEP0019.json", "交換器JSON檔名": "A003FSW010255005033.json", "備註": null}, {"序": 21, "位置編號": 20, "位置代號(格線)": "G3", "所在區域": "3F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.83", "孔位JSON檔名": "A003FEP0020.json", "交換器JSON檔名": "A003FSW010255005083.json", "備註": null}, {"序": 22, "位置編號": 21, "位置代號(格線)": "G4", "所在區域": "3F", "藍色埠": 2, "白色埠": 10, "灰色埠": 6, "交換器 IP": "10.255.5.35", "孔位JSON檔名": "A003FEP0021.json", "交換器JSON檔名": "A003FSW010255005035.json", "備註": null}, {"序": 23, "位置編號": 22, "位置代號(格線)": "F1", "所在區域": "3F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.34", "孔位JSON檔名": "A003FEP0022.json", "交換器JSON檔名": "A003FSW010255005034.json", "備註": null}, {"序": 24, "位置編號": 23, "位置代號(格線)": "F3", "所在區域": "3F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.83", "孔位JSON檔名": "A003FEP0023.json", "交換器JSON檔名": "A003FSW010255005083.json", "備註": null}, {"序": 25, "位置編號": 24, "位置代號(格線)": "F3", "所在區域": "3F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.83", "孔位JSON檔名": "A003FEP0024.json", "交換器JSON檔名": "A003FSW010255005083.json", "備註": null}, {"序": 26, "位置編號": 25, "位置代號(格線)": "F3", "所在區域": "3F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.33", "孔位JSON檔名": "A003FEP0025.json", "交換器JSON檔名": "A003FSW010255005033.json", "備註": null}, {"序": 27, "位置編號": 26, "位置代號(格線)": "F4", "所在區域": "3F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.31", "孔位JSON檔名": "A003FEP0026.json", "交換器JSON檔名": "A003FSW010255005031.json", "備註": null}, {"序": 1, "位置編號": "A01", "位置代號(格線)": "F4", "所在區域": "5F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0001.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 2, "位置編號": "A02", "位置代號(格線)": "G4", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0002.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 3, "位置編號": "A03", "位置代號(格線)": "G5", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0003.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 4, "位置編號": "A04", "位置代號(格線)": "L2", "所在區域": "5F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0004.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 5, "位置編號": "A05", "位置代號(格線)": "L3", "所在區域": "5F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0005.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 6, "位置編號": "A06", "位置代號(格線)": "J3", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0006.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 7, "位置編號": "A07", "位置代號(格線)": "J3", "所在區域": "5F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0007.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 8, "位置編號": "A08", "位置代號(格線)": "I1", "所在區域": "5F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.51", "孔位JSON檔名": "A005FEP0008.json", "交換器JSON檔名": "A005FSW010255005051.json", "備註": null}, {"序": 9, "位置編號": "A09", "位置代號(格線)": "I2", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0009.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": null}, {"序": 11, "位置編號": "A10", "位置代號(格線)": "I2", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0010.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": null}, {"序": 12, "位置編號": "A11", "位置代號(格線)": "J4", "所在區域": "5F", "藍色埠": 4, "白色埠": 8, "灰色埠": 11, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0011.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": null}, {"序": 13, "位置編號": "A12", "位置代號(格線)": "I4", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 10, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0012.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": "port10:(綠) 9F-A1"}, {"序": 14, "位置編號": "A13", "位置代號(格線)": "H4", "所在區域": "5F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0013.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": null}, {"序": 15, "位置編號": "A14", "位置代號(格線)": "H3", "所在區域": "5F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0014.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": "port21:(綠) 9F-A2"}, {"序": 16, "位置編號": "A15", "位置代號(格線)": "H1", "所在區域": "5F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0015.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": null}, {"序": 17, "位置編號": "A16", "位置代號(格線)": "G3", "所在區域": "5F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.52", "孔位JSON檔名": "A005FEP0016.json", "交換器JSON檔名": "A005FSW010255005052.json", "備註": null}, {"序": 18, "位置編號": "A17", "位置代號(格線)": "G3", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0017.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": null}, {"序": 19, "位置編號": "A18", "位置代號(格線)": "G2", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0018.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": "port10:B24"}, {"序": 20, "位置編號": "A19", "位置代號(格線)": "G1", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": "N/A", "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0019.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": null}, {"序": 22, "位置編號": "A20", "位置代號(格線)": "F3", "所在區域": "5F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0020.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": "port11:綠"}, {"序": 23, "位置編號": "A21", "位置代號(格線)": "F3", "所在區域": "5F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0021.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": "port20:未標註的線"}, {"序": 24, "位置編號": "A22", "位置代號(格線)": "F3", "所在區域": "5F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0022.json", "交換器JSON檔名": "B005FSW010255005053.json", "備註": "port20:東側1；線色備註:藍"}, {"序": 26, "位置編號": "A23", "位置代號(格線)": "G4", "所在區域": "5F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0023.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": null}, {"序": 27, "位置編號": "A24", "位置代號(格線)": "H4", "所在區域": "5F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.53", "孔位JSON檔名": "A005FEP0024.json", "交換器JSON檔名": "A005FSW010255005053.json", "備註": null}, {"序": 28, "位置編號": "A25", "位置代號(格線)": "I4", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.54", "孔位JSON檔名": "A005FEP0025.json", "交換器JSON檔名": "A005FSW010255005054.json", "備註": "port9:B20"}, {"序": 29, "位置編號": "A26", "位置代號(格線)": "J4", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.54", "孔位JSON檔名": "A005FEP0026.json", "交換器JSON檔名": "A005FSW010255005054.json", "備註": null}, {"序": 30, "位置編號": "A27", "位置代號(格線)": "L4", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.54", "孔位JSON檔名": "A005FEP0027.json", "交換器JSON檔名": "A005FSW010255005054.json", "備註": null}, {"序": 31, "位置編號": "A28", "位置代號(格線)": "L3", "所在區域": "5F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.54", "孔位JSON檔名": "A005FEP0028.json", "交換器JSON檔名": "A005FSW010255005054.json", "備註": null}, {"序": 32, "位置編號": "A29", "位置代號(格線)": "L2", "所在區域": "5F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.54", "孔位JSON檔名": "A005FEP0029.json", "交換器JSON檔名": "A005FSW010255005054.json", "備註": null}, {"序": 33, "位置編號": "A30", "位置代號(格線)": "L1", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.55", "孔位JSON檔名": "A005FEP0030.json", "交換器JSON檔名": "A005FSW010255005055.json", "備註": null}, {"序": 34, "位置編號": "A31", "位置代號(格線)": "M2", "所在區域": "5F", "藍色埠": 15, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.55", "孔位JSON檔名": "A005FEP0031.json", "交換器JSON檔名": "A005FSW010255005055.json", "備註": null}, {"序": 35, "位置編號": "A32", "位置代號(格線)": "M1", "所在區域": "5F", "藍色埠": 2, "白色埠": 8, "灰色埠": 10, "交換器 IP": "10.255.5.55", "孔位JSON檔名": "A005FEP0032.json", "交換器JSON檔名": "A005FSW010255005055.json", "備註": "port8:未標註的線\n"}, {"序": 36, "位置編號": "A33", "位置代號(格線)": "M1", "所在區域": "5F", "藍色埠": 13, "白色埠": 19, "灰色埠": 22, "交換器 IP": "10.255.5.55", "孔位JSON檔名": "A005FEP0033.json", "交換器JSON檔名": "A005FSW010255005055.json", "備註": "port14:4F\n"}, {"序": 37, "位置編號": "A34", "位置代號(格線)": "M1", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.55", "孔位JSON檔名": "A005FEP0034.json", "交換器JSON檔名": "A005FSW010255005055.json", "備註": null}, {"序": 38, "位置編號": "AP01", "位置代號(格線)": "L1", "所在區域": "5F", "藍色埠": "N/A", "白色埠": 7, "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "AP005FEP0001.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "port7:空\n"}, {"序": 39, "位置編號": "AP02", "位置代號(格線)": "L2", "所在區域": "5F", "藍色埠": 2, "白色埠": "N/A", "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "AP005FEP0002.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "port3:5FB36灰\n"}, {"序": 40, "位置編號": "AP03", "位置代號(格線)": "J3", "所在區域": "5F", "藍色埠": 4, "白色埠": "N/A", "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "AP005FEP0003.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "port5:5FB38灰\n"}, {"序": 41, "位置編號": "AP04", "位置代號(格線)": "H3", "所在區域": "5F", "藍色埠": 3, "白色埠": "N/A", "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "AP005FEP0004.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "port4:5FB35灰"}, {"序": 42, "位置編號": "AP05", "位置代號(格線)": "F3", "所在區域": "5F", "藍色埠": "N/A", "白色埠": 5, "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "AP005FEP0005.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "port6:5F APO 6"}, {"序": 43, "位置編號": "B01", "位置代號(格線)": "F1", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0001.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port1:藍(POS)；port5:白(聯合)；port9:灰(台新)"}, {"序": 46, "位置編號": "B02", "位置代號(格線)": "G1", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0002.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port2:藍(POS)；port6:白(聯合)；port10:灰(台新)"}, {"序": 47, "位置編號": "B03", "位置代號(格線)": "H1", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0003.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port3:藍(POS)；port7:白(聯合)；port11:灰(台新)"}, {"序": 48, "位置編號": "B04", "位置代號(格線)": "I1", "所在區域": "5F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0004.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port4:藍(POS)；port8:白(聯合)；port12:灰(台新)；併接/相關標示: C5F-1"}, {"序": 49, "位置編號": "B06", "位置代號(格線)": "J1", "所在區域": "5F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0006.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port13:5F B33"}, {"序": 50, "位置編號": "B07", "位置代號(格線)": "J1", "所在區域": "5F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0007.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port14:5F B33；port18:藍"}, {"序": 51, "位置編號": "B08", "位置代號(格線)": "K1", "所在區域": "5F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.151", "孔位JSON檔名": "B005FEP0008.json", "交換器JSON檔名": "B005FSW010255005151.json", "備註": "port15:5F B33"}, {"序": 52, "位置編號": "B09", "位置代號(格線)": "K1", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0009.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": "port9:淺綠"}, {"序": 53, "位置編號": "B10", "位置代號(格線)": "L1", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0010.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": "port10:空"}, {"序": 54, "位置編號": "B11", "位置代號(格線)": "L1", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 11, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0011.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": "port11:空"}, {"序": 55, "位置編號": "B12", "位置代號(格線)": "M1", "所在區域": "5F", "藍色埠": 4, "白色埠": 8, "灰色埠": 12, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0012.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": null}, {"序": 56, "位置編號": "B13", "位置代號(格線)": "M1", "所在區域": "5F", "藍色埠": 13, "白色埠": 17, "灰色埠": 21, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0013.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": "port21:淺綠"}, {"序": 57, "位置編號": "B14", "位置代號(格線)": "M2", "所在區域": "5F", "藍色埠": 14, "白色埠": 18, "灰色埠": 22, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0014.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": "port22:空"}, {"序": 58, "位置編號": "B15", "位置代號(格線)": "M2", "所在區域": "5F", "藍色埠": 15, "白色埠": 19, "灰色埠": 23, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0015.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": "port19:5F B33白"}, {"序": 59, "位置編號": "B16", "位置代號(格線)": "M3", "所在區域": "5F", "藍色埠": 16, "白色埠": 20, "灰色埠": 24, "交換器 IP": "10.255.5.152", "孔位JSON檔名": "B005FEP0016.json", "交換器JSON檔名": "B005FSW010255005152.json", "備註": null}, {"序": 60, "位置編號": "B17", "位置代號(格線)": "M3", "所在區域": "5F", "藍色埠": 1, "白色埠": 5, "灰色埠": 9, "交換器 IP": "10.255.5.153", "孔位JSON檔名": "B005FEP0017.json", "交換器JSON檔名": "B005FSW010255005153.json", "備註": null}, {"序": 61, "位置編號": "B18", "位置代號(格線)": "M4", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 10, "交換器 IP": "10.255.5.153", "孔位JSON檔名": "B005FEP0018.json", "交換器JSON檔名": "B005FSW010255005153.json", "備註": null}, {"序": 62, "位置編號": "B19", "位置代號(格線)": "M4", "所在區域": "5F", "藍色埠": 3, "白色埠": 7, "灰色埠": 21, "交換器 IP": "10.255.5.153", "孔位JSON檔名": "B005FEP0019.json", "交換器JSON檔名": "B005FSW010255005153.json", "備註": "port3:未標藍；port7:未標白"}, {"序": 65, "位置編號": "B31", "位置代號(格線)": "L6", "所在區域": "5F", "藍色埠": 3, "白色埠": 5, "灰色埠": 1, "交換器 IP": "10.255.5.155", "孔位JSON檔名": "B005FEP0032.json", "交換器JSON檔名": "B005FSW010255005155.json", "備註": "線色備註:灰"}, {"序": 65, "位置編號": "B32", "位置代號(格線)": "L6", "所在區域": "5F", "藍色埠": 2, "白色埠": 6, "灰色埠": 22, "交換器 IP": "10.255.5.155", "孔位JSON檔名": "B005FEP0032.json", "交換器JSON檔名": "B005FSW010255005155.json", "備註": "線色備註:灰"}, {"序": 67, "位置編號": "B34", "位置代號(格線)": "J6", "所在區域": "5F", "藍色埠": "N/A", "白色埠": 8, "灰色埠": "N/A", "交換器 IP": "10.255.5.155", "孔位JSON檔名": "B005FEP0034.json", "交換器JSON檔名": "B005FSW010255005155.json", "備註": null}, {"序": 66, "位置編號": "B34-2", "位置代號(格線)": "K6", "所在區域": "5F", "藍色埠": "N/A", "白色埠": 5, "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "B005FEP0034_2.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "線色備註:灰"}, {"序": 68, "位置編號": "B36", "位置代號(格線)": "I6", "所在區域": "5F", "藍色埠": 14, "白色埠": 18, "灰色埠": "N/A", "交換器 IP": "10.255.5.155", "孔位JSON檔名": "B005FEP0036.json", "交換器JSON檔名": "B005FSW010255005155.json", "備註": "併接/相關標示: 5F B37"}, {"序": 69, "位置編號": "B37", "位置代號(格線)": "H6", "所在區域": "5F", "藍色埠": "N/A", "白色埠": 7, "灰色埠": "N/A", "交換器 IP": "10.255.5.154", "孔位JSON檔名": "B005FEP0037.json", "交換器JSON檔名": "B005FSW010255005154.json", "備註": "port10:未標-灰；線色備註:灰"}, {"序": 70, "位置編號": "B39", "位置代號(格線)": "G6", "所在區域": "5F", "藍色埠": 9, "白色埠": 12, "灰色埠": "N/A", "交換器 IP": "10.255.5.155", "孔位JSON檔名": "B005FEP0039.json", "交換器JSON檔名": "B005FSW010255005155.json", "備註": "線色備註:白"}, {"序": 71, "位置編號": "B40", "位置代號(格線)": "F6", "所在區域": "5F", "藍色埠": 10, "白色埠": 11, "灰色埠": 23, "交換器 IP": "10.255.5.155", "孔位JSON檔名": "B005FEP0040.json", "交換器JSON檔名": "B005FSW010255005155.json", "備註": "線色備註:藍；線色備註:白；port19:未標灰"}]</script>
+<script>
+(function () {
+  "use strict";
+
+  const REQUIRED_HEADERS = ["位置編號", "孔位JSON檔名", "交換器JSON檔名"];
+  let currentRows = null; // raw rows parsed from excel or default
+  let lastResult = null;  // { epList, swList, anomalies, allFiles: {filename: content} }
+
+  const el = (id) => document.getElementById(id);
+
+  function todayStr() {
+    const d = new Date();
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const dd = String(d.getDate()).padStart(2, "0");
+    return `${d.getFullYear()}-${mm}-${dd}`;
+  }
+
+  // ---------- Excel parsing ----------
+  function loadDefaultRows() {
+    const raw = document.getElementById("default-data").textContent;
+    return JSON.parse(raw);
+  }
+
+  function parseWorkbook(arrayBuffer) {
+    const wb = XLSX.read(arrayBuffer, { type: "array" });
+    let rows = [];
+    wb.SheetNames.forEach((name) => {
+      const ws = wb.Sheets[name];
+      const json = XLSX.utils.sheet_to_json(ws, { header: 1, defval: null });
+      if (!json.length) return;
+      const header = json[0].map((h) => (h == null ? "" : String(h).trim()));
+      const hasRequired = REQUIRED_HEADERS.every((h) => header.includes(h));
+      if (!hasRequired) return;
+      for (let r = 1; r < json.length; r++) {
+        const vals = json[r];
+        if (vals == null) continue;
+        const rowObj = {};
+        header.forEach((h, i) => (rowObj[h] = vals[i] === undefined ? null : vals[i]));
+        if (rowObj["位置編號"] == null || rowObj["位置編號"] === "") continue;
+        rows.push(rowObj);
+      }
+    });
+    return rows;
+  }
+
+  // ---------- anomaly detection + resolution (mirrors python generator) ----------
+  function processRows(rows) {
+    const anomalies = [];
+
+    // group by EP filename
+    const epGroups = {};
+    rows.forEach((r) => {
+      const f = r["孔位JSON檔名"];
+      (epGroups[f] = epGroups[f] || []).push(r);
+    });
+
+    Object.entries(epGroups).forEach(([epFile, group]) => {
+      if (group.length > 1) {
+        const mapping = {};
+        group.forEach((r) => {
+          const pos = String(r["位置編號"]);
+          const digits = (pos.match(/\d+/g) || []).join("");
+          const prefix = epFile.replace(/\.json$/i, "");
+          const letters = prefix.replace(/\d+$/, "");
+          let expected = epFile;
+          if (digits) {
+            expected = `${letters}${String(parseInt(digits, 10)).padStart(4, "0")}.json`;
+          }
+          r._ep_file_resolved = expected;
+          mapping[pos] = expected;
+        });
+        anomalies.push({
+          type: "孔位JSON檔名重複",
+          detail: `檔名 ${epFile} 對應到多個位置編號 (${group.map((g) => g["位置編號"]).join(", ")})，已依各自位置編號重新推算專屬檔名：${JSON.stringify(mapping)}，請確認原始 Excel 是否需一併更正。`,
+        });
+      } else {
+        group[0]._ep_file_resolved = epFile;
+      }
+    });
+
+    // group by switch IP -> majority filename
+    const ipFiles = {};
+    rows.forEach((r) => {
+      const ip = r["交換器 IP"];
+      if (!ip || ip === "未標示") return;
+      ipFiles[ip] = ipFiles[ip] || {};
+      const f = r["交換器JSON檔名"];
+      ipFiles[ip][f] = (ipFiles[ip][f] || 0) + 1;
+    });
+    const canonicalSw = {};
+    Object.entries(ipFiles).forEach(([ip, counter]) => {
+      const entries = Object.entries(counter).sort((a, b) => b[1] - a[1]);
+      canonicalSw[ip] = entries[0][0];
+      if (entries.length > 1) {
+        anomalies.push({
+          type: "交換器IP對應多個檔名",
+          detail: `IP ${ip} 對應到不同檔名 ${JSON.stringify(Object.fromEntries(entries))}，已採多數決結果「${entries[0][0]}」為準，少數者已於備註標註原始值。`,
+        });
+      }
+    });
+
+    rows.forEach((r) => {
+      const ip = r["交換器 IP"];
+      if (ip && ip !== "未標示") {
+        const resolved = canonicalSw[ip];
+        if (resolved !== r["交換器JSON檔名"]) r._sw_file_original = r["交換器JSON檔名"];
+        r._sw_file_resolved = resolved;
+      } else {
+        r._sw_file_resolved = null;
+      }
+    });
+
+    return anomalies;
+  }
+
+  function buildCoreContents(rows) {
+    const epContents = {}; // filename -> core object
+    const epMeta = [];
+    rows.forEach((row) => {
+      const epFile = row._ep_file_resolved;
+      let note = row["備註"] || "";
+      if (row._sw_file_original) {
+        const extra = `（原始交換器JSON檔名記載為 ${row._sw_file_original}，因與同IP其他資料不一致，已採多數決改為 ${row._sw_file_resolved}）`;
+        note = note ? note + "；" + extra : extra;
+      }
+      if (epFile !== row["孔位JSON檔名"]) {
+        const extra2 = `（原始孔位JSON檔名為 ${row["孔位JSON檔名"]}，因與其他位置編號重複，已依命名規則調整）`;
+        note = note ? note + "；" + extra2 : extra2;
+      }
+      const core = {
+        "序": row["序"] ?? null,
+        "位置編號": row["位置編號"],
+        "位置代號(格線)": row["位置代號(格線)"] ?? null,
+        "所在區域": row["所在區域"] ?? null,
+        "Port_藍": row["藍色埠"] ?? null,
+        "Port_白": row["白色埠"] ?? null,
+        "Port_灰": row["灰色埠"] ?? null,
+        "交換器_Switch IP": row["交換器 IP"] ?? null,
+        "交換器_Switch序號檔": row._sw_file_resolved,
+        "備註": note || null,
+      };
+      epContents[epFile] = core;
+      epMeta.push({ file: epFile, 位置編號: row["位置編號"], 所在區域: row["所在區域"] });
+    });
+
+    const swGroups = {};
+    rows.forEach((row) => {
+      if (!row._sw_file_resolved) return;
+      (swGroups[row._sw_file_resolved] = swGroups[row._sw_file_resolved] || []).push(row);
+    });
+    const swContents = {};
+    const swMeta = [];
+    Object.entries(swGroups).forEach(([swFile, group]) => {
+      const ip = group[0]["交換器 IP"];
+      const areasSet = Array.from(new Set(group.map((r) => r["所在區域"])));
+      const area = areasSet.length > 1 ? areasSet : areasSet[0];
+      const list = group
+        .slice()
+        .sort((a, b) => String(a["位置編號"]).localeCompare(String(b["位置編號"]), "zh-Hant-u-kn-true"))
+        .map((r) => ({
+          "序": r["序"] ?? null,
+          "位置編號": r["位置編號"],
+          "位置代號(格線)": r["位置代號(格線)"] ?? null,
+          "對應網路孔序號檔": r._ep_file_resolved,
+          "Port_藍": r["藍色埠"] ?? null,
+          "Port_白": r["白色埠"] ?? null,
+          "Port_灰": r["灰色埠"] ?? null,
+        }));
+      const core = {
+        "交換器_Switch IP": ip,
+        "交換器_Switch序號檔": swFile,
+        "所在區域": area,
+        "對應網路孔清單": list,
+      };
+      swContents[swFile] = core;
+      swMeta.push({ file: swFile, IP: ip, 所在區域: area, 孔位數: group.length });
+    });
+
+    return { epContents, epMeta, swContents, swMeta };
+  }
+
+  // ---------- versioning via window.storage (shared) ----------
+  function coreEqual(a, b) {
+    const strip = (o) => {
+      const c = Object.assign({}, o);
+      delete c["版本"];
+      delete c["修訂紀錄"];
+      return c;
+    };
+    return JSON.stringify(strip(a)) === JSON.stringify(strip(b));
+  }
+
+  async function writeVersioned(filename, core) {
+    let existing = null;
+    try {
+      const res = await window.storage.get(filename, true);
+      if (res && res.value) existing = JSON.parse(res.value);
+    } catch (e) {
+      existing = null;
+    }
+    let content, status;
+    if (!existing) {
+      content = Object.assign({}, core, {
+        "版本": "1.0",
+        "修訂紀錄": [{ "版本": "1.0", "日期": todayStr(), "說明": "初版建立（透過 HTML JSON 產生器建立）" }],
+      });
+      status = "new";
+    } else if (coreEqual(existing, core)) {
+      content = Object.assign({}, core, {
+        "版本": existing["版本"] || "1.0",
+        "修訂紀錄": existing["修訂紀錄"] || [],
+      });
+      status = "unchanged";
+    } else {
+      const oldVer = existing["版本"] || "1.0";
+      let newVer;
+      const parts = String(oldVer).split(".");
+      if (parts.length === 2 && !isNaN(parseInt(parts[1], 10))) {
+        newVer = `${parts[0]}.${parseInt(parts[1], 10) + 1}`;
+      } else {
+        newVer = oldVer + ".1";
+      }
+      content = Object.assign({}, core, {
+        "版本": newVer,
+        "修訂紀錄": (existing["修訂紀錄"] || []).concat([
+          { "版本": newVer, "日期": todayStr(), "說明": "資料更新（透過 HTML JSON 產生器重新產生）" },
+        ]),
+      });
+      status = "updated";
+    }
+    try {
+      await window.storage.set(filename, JSON.stringify(content), true);
+    } catch (e) {
+      console.error("storage set failed for", filename, e);
+    }
+    return { content, status };
+  }
+
+  async function runBatched(items, worker, concurrency = 8) {
+    const results = new Array(items.length);
+    let idx = 0;
+    async function next() {
+      while (idx < items.length) {
+        const i = idx++;
+        results[i] = await worker(items[i], i);
+      }
+    }
+    await Promise.all(Array.from({ length: concurrency }, next));
+    return results;
+  }
+
+  // ---------- UI rendering ----------
+  function statusBadge(status) {
+    const map = { new: ["new", "新增"], updated: ["updated", "版本更新"], unchanged: ["unchanged", "未變更"] };
+    const [cls, label] = map[status] || ["unchanged", "-"];
+    return `<span class="badge ${cls}">${label}</span>`;
+  }
+
+  function renderResults(result) {
+    lastResult = result;
+    el("emptyState").style.display = "none";
+    el("statsRow").style.display = "flex";
+
+    const allStatuses = result.epRows.map((r) => r.status).concat(result.swRows.map((r) => r.status));
+    el("statTotal").textContent = allStatuses.length;
+    el("statNew").textContent = allStatuses.filter((s) => s === "new").length;
+    el("statUpdated").textContent = allStatuses.filter((s) => s === "updated").length;
+    el("statUnchanged").textContent = allStatuses.filter((s) => s === "unchanged").length;
+    el("statAnomaly").textContent = result.anomalies.length;
+
+    // anomalies
+    const anomalyPanel = el("anomalyPanel");
+    const anomalyBody = document.querySelector("#anomalyTable tbody");
+    anomalyBody.innerHTML = "";
+    if (result.anomalies.length) {
+      anomalyPanel.style.display = "block";
+      result.anomalies.forEach((a) => {
+        const tr = document.createElement("tr");
+        tr.className = "anomaly-row";
+        tr.innerHTML = `<td class="left">${a.type}</td><td class="left">${a.detail}</td>`;
+        anomalyBody.appendChild(tr);
+      });
+    } else {
+      anomalyPanel.style.display = "none";
+    }
+
+    // EP table
+    el("epPanel").style.display = "block";
+    el("epCount").textContent = `共 ${result.epRows.length} 筆`;
+    const epBody = el("epBody");
+    epBody.innerHTML = "";
+    result.epRows
+      .slice()
+      .sort((a, b) => (a.area + String(a.pos)).localeCompare(b.area + String(b.pos), "zh-Hant-u-kn-true"))
+      .forEach((r) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${r.area ?? "-"}</td>
+          <td>${r.pos}</td>
+          <td class="left"><code>${r.file}</code></td>
+          <td>${r.content["版本"]}</td>
+          <td>${statusBadge(r.status)}</td>
+          <td><a class="preview-link" data-file="${r.file}" data-kind="ep">檢視</a></td>
+        `;
+        epBody.appendChild(tr);
+      });
+
+    // SW table
+    el("swPanel").style.display = "block";
+    el("swCount").textContent = `共 ${result.swRows.length} 筆`;
+    const swBody = el("swBody");
+    swBody.innerHTML = "";
+    result.swRows
+      .slice()
+      .sort((a, b) => (String(a.area) + a.ip).localeCompare(String(b.area) + b.ip))
+      .forEach((r) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${Array.isArray(r.area) ? r.area.join(",") : r.area ?? "-"}</td>
+          <td>${r.ip}</td>
+          <td class="left"><code>${r.file}</code></td>
+          <td>${r.portCount}</td>
+          <td>${r.content["版本"]}</td>
+          <td>${statusBadge(r.status)}</td>
+          <td><a class="preview-link" data-file="${r.file}" data-kind="sw">檢視</a></td>
+        `;
+        swBody.appendChild(tr);
+      });
+
+    document.querySelectorAll(".preview-link").forEach((a) => {
+      a.addEventListener("click", () => {
+        const file = a.getAttribute("data-file");
+        const kind = a.getAttribute("data-kind");
+        const src = kind === "ep" ? result.epFiles[file] : result.swFiles[file];
+        el("modalTitle").textContent = file;
+        el("modalContent").textContent = JSON.stringify(src, null, 2);
+        el("modalBg").style.display = "flex";
+      });
+    });
+
+    el("btnDownloadZip").disabled = false;
+    el("btnDownloadManifest").disabled = false;
+  }
+
+  async function handleGenerate() {
+    const rows = currentRows || loadDefaultRows();
+    const btn = el("btnGenerate");
+    btn.disabled = true;
+    btn.textContent = "產生中...";
+
+    const anomalies = processRows(rows);
+    const { epContents, epMeta, swContents, swMeta } = buildCoreContents(rows);
+
+    const epFiles = {};
+    const epRows = await runBatched(Object.keys(epContents), async (file) => {
+      const { content, status } = await writeVersioned(file, epContents[file]);
+      epFiles[file] = content;
+      const meta = epMeta.find((m) => m.file === file) || {};
+      return { file, pos: meta.位置編號, area: meta.所在區域, content, status };
+    });
+
+    const swFiles = {};
+    const swRows = await runBatched(Object.keys(swContents), async (file) => {
+      const { content, status } = await writeVersioned(file, swContents[file]);
+      swFiles[file] = content;
+      const meta = swMeta.find((m) => m.file === file) || {};
+      return { file, ip: meta.IP, area: meta.所在區域, portCount: meta.孔位數, content, status };
+    });
+
+    renderResults({ epRows, swRows, anomalies, epFiles, swFiles });
+
+    btn.disabled = false;
+    btn.textContent = "產生 / 更新 JSON";
+  }
+
+  async function handleDownloadZip() {
+    if (!lastResult) return;
+    const zip = new JSZip();
+    const folder = zip.folder("json");
+    Object.entries(lastResult.epFiles).forEach(([name, content]) => {
+      folder.file(name, JSON.stringify(content, null, 2));
+    });
+    Object.entries(lastResult.swFiles).forEach(([name, content]) => {
+      folder.file(name, JSON.stringify(content, null, 2));
+    });
+    if (lastResult.anomalies.length) {
+      zip.file("anomalies_report.json", JSON.stringify(lastResult.anomalies, null, 2));
+    }
+    const blob = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `弱電網路孔交換器JSON_${todayStr()}.zip`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function handleDownloadManifest() {
+    if (!lastResult) return;
+    const manifest = {
+      "產生日期": todayStr(),
+      "孔位JSON數量": lastResult.epRows.length,
+      "交換器JSON數量": lastResult.swRows.length,
+      "孔位清單": lastResult.epRows.map((r) => ({ 位置編號: r.pos, 所在區域: r.area, 檔名: r.file, 版本: r.content["版本"], 狀態: r.status })),
+      "交換器清單": lastResult.swRows.map((r) => ({ IP: r.ip, 所在區域: r.area, 檔名: r.file, 孔位數: r.portCount, 版本: r.content["版本"], 狀態: r.status })),
+      "異常項目": lastResult.anomalies,
+    };
+    const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `manifest_${todayStr()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  el("fileInput").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        currentRows = parseWorkbook(ev.target.result);
+        if (!currentRows.length) {
+          alert("在此 Excel 檔中找不到符合欄位格式的資料列（需含：位置編號、孔位JSON檔名、交換器JSON檔名 等欄位）。");
+          currentRows = null;
+          return;
+        }
+        el("fileName").textContent = `已載入：${file.name}（共 ${currentRows.length} 筆資料列）`;
+      } catch (err) {
+        alert("讀取 Excel 檔失敗：" + err.message);
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  });
+
+  el("btnGenerate").addEventListener("click", handleGenerate);
+  el("btnDownloadZip").addEventListener("click", handleDownloadZip);
+  el("btnDownloadManifest").addEventListener("click", handleDownloadManifest);
+  el("modalClose").addEventListener("click", () => (el("modalBg").style.display = "none"));
+  el("modalBg").addEventListener("click", (e) => {
+    if (e.target.id === "modalBg") el("modalBg").style.display = "none";
+  });
+})();
+
+</script>
+</body>
+</html>
