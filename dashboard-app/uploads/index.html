@@ -1522,9 +1522,13 @@ createApp({
     // ============================================================
 
     // 3.4 排除條款：測試機台或臨時調撥機台不列入常態週期計算
+    // 判斷依據改為「備註」欄位（事件層級），而非目前狀態(assetStatus)：
+    // 只要該機台任一筆換機事件的備註含有「測試/臨調/臨時調撥/test」字樣，
+    // 這台機台的所有間隔整批清空、一筆都不採計。
     function isTestOrTempTerminal(t){
-      const s = (t && t.assetStatus) ? String(t.assetStatus) : '';
-      return /測試|臨調|臨時調撥|test/i.test(s);
+      if(!t) return false;
+      const hist = eventsByTerminal.value[t.terminalId] || [];
+      return hist.some(e => /測試|臨調|臨時調撥|test/i.test(String(e.remark || '')));
     }
 
     // 每台機台歷史換機事件之間隔天數（原始樣本，尚未套用排除條款）
