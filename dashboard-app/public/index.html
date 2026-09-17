@@ -244,6 +244,39 @@
   .audit-empty{font-size:12.5px; color:var(--ink-faint); padding:10px 0;}
   .audit-checkbox{width:16px; height:16px; cursor:pointer;}
 
+  /* ---------- git log export tab ---------- */
+  .code-block{
+    background:#1f2a33; color:#d8e6ee; font-family:var(--mono); font-size:13px;
+    padding:14px 16px; border-radius:10px; overflow-x:auto; white-space:pre; line-height:1.6;
+    position:relative;
+  }
+  .code-copy-btn{position:absolute; top:8px; right:8px;}
+  .step-num{
+    display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px;
+    border-radius:50%; background:var(--accent); color:#fff; font-size:12px; font-weight:800; margin-right:8px; flex:none;
+  }
+  .step-row{display:flex; align-items:flex-start; gap:4px; margin-bottom:14px;}
+  .step-body{flex:1;}
+  .step-title{font-weight:800; font-size:13.5px; color:var(--header); margin-bottom:6px;}
+  .git-drop{
+    border:2px dashed var(--border); border-radius:12px; padding:26px 16px; text-align:center;
+    background:#fbfdfe; cursor:pointer; transition:.15s;
+  }
+  .git-drop:hover, .git-drop.dragover{border-color:var(--accent); background:var(--accent-soft);}
+  .git-drop .hint{font-size:12px; color:var(--ink-faint); margin-top:6px;}
+  .git-file-card{
+    border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-top:12px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--panel);
+  }
+  .git-file-info{font-size:12.5px; color:var(--ink-soft); line-height:1.7;}
+  .git-file-info b{color:var(--header);}
+  .git-file-actions{display:flex; gap:8px; flex-wrap:wrap;}
+  .git-history-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    padding:8px 10px; border-bottom:1px solid #eef4f8; font-size:12.5px;
+  }
+  .git-history-item:last-child{border-bottom:none;}
+
   footer.foot{padding:20px 28px 40px; text-align:center; color:var(--ink-faint); font-size:12px;}
 
   /* ---------- report / print ---------- */
@@ -297,6 +330,7 @@
     <button :class="{active: tab==='events'}" @click="tab='events'">換機事件明細</button>
     <button :class="{active: tab==='forecast'}" @click="tab='forecast'">換機建議與故障預測</button>
     <button :class="{active: tab==='audit'}" @click="tab='audit'">查核比對／防盜稽核</button>
+    <button :class="{active: tab==='gitexport'}" @click="tab='gitexport'">最新 Git Log 匯出</button>
     <button :class="{active: tab==='report'}" @click="tab='report'">列印報表</button>
   </nav>
 
@@ -903,6 +937,79 @@
                 </div>
               </template>
             </template>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ============ GIT LOG EXPORT ============ -->
+    <template v-if="tab==='gitexport'">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>最新 Git Log 匯出</h2>
+            <div class="desc">
+              產生本系統可讀取的最新換機紀錄檔，並自動依「處理當下的系統時間」重新命名，方便留存每一次匯出的版本、避免互相覆蓋。
+            </div>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <div class="step-title">在有這個 git 倉庫的機器上，執行以下指令</div>
+            <div class="code-block" id="gitCmdBlock">git log -p --unified=1 --no-merges --diff-filter=MD -- terminals/ &gt; out.txt<button class="btn small ghost code-copy-btn" style="color:var(--ink-soft); border-color:var(--border);" @click="copyGitCommand">{{ gitCmdCopied ? '已複製 ✓' : '複製指令' }}</button></div>
+            <div class="hint" style="font-size:12px; color:var(--ink-faint); margin-top:6px;">
+              會產生一個 <code class="mono">out.txt</code>，內容是 <code class="mono">terminals/</code> 目錄下所有「修改（M）」與「刪除（D）」異動的 diff（含前後各 1 行上下文，且排除合併提交）。
+            </div>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <span class="step-num">2</span>
+          <div class="step-body" style="width:100%;">
+            <div class="step-title">把產生的 out.txt 拖進來，或點擊選取檔案</div>
+            <div class="git-drop"
+                 :class="{dragover: gitDropActive}"
+                 @click="$refs.gitExportFileInput.click()"
+                 @dragover.prevent="gitDropActive=true"
+                 @dragleave.prevent="gitDropActive=false"
+                 @drop.prevent="onGitExportDrop">
+              <div style="font-size:14px; font-weight:700; color:var(--header);">📄 拖放 out.txt 到這裡，或點擊選取檔案</div>
+              <div class="hint">支援一次處理多個檔案；每個檔案會各自依處理時間重新命名。</div>
+            </div>
+            <input ref="gitExportFileInput" type="file" class="visually-hidden" multiple accept=".txt,.log,.diff,text/plain" @change="onGitExportSelect">
+          </div>
+        </div>
+
+        <template v-if="gitExportFiles.length">
+          <div class="step-row" style="margin-top:4px;">
+            <span class="step-num">3</span>
+            <div class="step-body" style="width:100%;">
+              <div class="step-title">下載重新命名後的檔案</div>
+              <div v-for="f in gitExportFiles" :key="f.id" class="git-file-card">
+                <div class="git-file-info">
+                  原始檔名：<b>{{ f.originalName }}</b>　|　檔案大小：{{ f.sizeLabel }}　|　行數：{{ f.lineCount }}<br>
+                  處理時間：<span class="mono">{{ f.processedAt }}</span>　|　偵測到 terminals diff 區塊：{{ f.diffBlockCount }} 個<br>
+                  建議新檔名：<b class="mono" style="color:var(--accent);">{{ f.newName }}</b>
+                </div>
+                <div class="git-file-actions">
+                  <button class="btn small primary" @click="downloadGitExportFile(f)">下載（{{ f.newName }}）</button>
+                  <button class="btn small ghost" style="color:var(--ink-soft); border-color:var(--border);" @click="importGitExportFile(f)">同時套用為最新資料集</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <div v-if="gitExportHistory.length" style="margin-top:22px; border-top:1px solid var(--border); padding-top:14px;">
+          <div class="step-title" style="margin-bottom:4px;">本次瀏覽階段的處理紀錄</div>
+          <div class="hint" style="margin-bottom:6px;">僅保存於目前分頁的瀏覽階段中，重新整理頁面後會清空；如需長期留存，請自行下載檔案保存。</div>
+          <div>
+            <div v-for="h in gitExportHistory" :key="h.id" class="git-history-item">
+              <span>{{ h.processedAt }}　→　<b class="mono">{{ h.newName }}</b>（原檔：{{ h.originalName }}，{{ h.sizeLabel }}）</span>
+              <button class="btn small ghost" style="color:var(--ink-soft); border-color:var(--border);" @click="redownloadGitExportHistory(h)">重新下載</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1861,6 +1968,125 @@ createApp({
       return s==='forced' ? '外部強制通知' : s==='idle' ? '長期未換(逾100天)' : s==='category' ? '依分類平均' : '依全站平均';
     }
 
+    // ---------- git log export（重新命名 + 下載） ----------
+    const GIT_EXPORT_COMMAND = 'git log -p --unified=1 --no-merges --diff-filter=MD -- terminals/ > out.txt';
+    const gitCmdCopied = ref(false);
+    function copyGitCommand(){
+      const done = () => { gitCmdCopied.value = true; setTimeout(()=>{ gitCmdCopied.value = false; }, 1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(GIT_EXPORT_COMMAND).then(done).catch(()=>{
+          window.prompt('請手動複製以下指令：', GIT_EXPORT_COMMAND);
+        });
+      }else{
+        window.prompt('請手動複製以下指令：', GIT_EXPORT_COMMAND);
+      }
+    }
+
+    function formatBytes(n){
+      if(n < 1024) return n + ' B';
+      if(n < 1024*1024) return (n/1024).toFixed(1) + ' KB';
+      return (n/1024/1024).toFixed(2) + ' MB';
+    }
+    function formatTimestampForFilename(d){
+      const pad = x => String(x).padStart(2,'0');
+      return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'_'+pad(d.getHours())+pad(d.getMinutes())+pad(d.getSeconds());
+    }
+
+    const gitDropActive = ref(false);
+    const gitExportFiles = reactive([]);   // 本次選取、尚顯示於畫面上的檔案
+    const gitExportHistory = reactive([]); // 本次瀏覽階段所有處理過的檔案（含已下載過的）
+    const usedGitExportNames = new Set();
+    let gitExportSeq = 0;
+
+    function buildUniqueExportName(d){
+      let base = 'out_' + formatTimestampForFilename(d);
+      let name = base + '.txt';
+      let n = 2;
+      while(usedGitExportNames.has(name)){
+        name = base + '_' + n + '.txt';
+        n++;
+      }
+      usedGitExportNames.add(name);
+      return name;
+    }
+
+    function processGitExportFile(file){
+      const reader = new FileReader();
+      reader.onerror = () => {
+        importStatus.value = { type:'error', message:'讀取 '+file.name+' 失敗：'+(reader.error ? reader.error.message : '未知錯誤') };
+      };
+      reader.onload = () => {
+        const text = reader.result;
+        const now = new Date();
+        const newName = buildUniqueExportName(now);
+        const lineCount = (text.match(/\n/g)||[]).length + 1;
+        const diffBlockCount = (text.match(/diff --git [^\n]*a\/terminals\//g)||[]).length;
+        const blob = new Blob([text], {type:'text/plain'});
+        const entry = {
+          id: 'ge' + (++gitExportSeq),
+          originalName: file.name,
+          sizeLabel: formatBytes(file.size),
+          lineCount,
+          diffBlockCount,
+          processedAt: now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+' '
+                       +String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0')+':'+String(now.getSeconds()).padStart(2,'0'),
+          newName,
+          text,
+          blob,
+        };
+        gitExportFiles.push(entry);
+        gitExportHistory.unshift(entry);
+      };
+      reader.readAsText(file, 'utf-8');
+    }
+
+    function onGitExportSelect(evt){
+      const files = evt.target.files;
+      if(files) Array.from(files).forEach(processGitExportFile);
+      evt.target.value = '';
+    }
+    function onGitExportDrop(evt){
+      gitDropActive.value = false;
+      const files = evt.dataTransfer && evt.dataTransfer.files;
+      if(files) Array.from(files).forEach(processGitExportFile);
+    }
+
+    function triggerBlobDownload(blob, filename){
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(()=>URL.revokeObjectURL(a.href), 5000);
+    }
+    function downloadGitExportFile(f){
+      triggerBlobDownload(f.blob, f.newName);
+    }
+    function redownloadGitExportHistory(h){
+      triggerBlobDownload(h.blob, h.newName);
+    }
+    function importGitExportFile(f){
+      try{
+        const parsed = parseGitLogText(f.text);
+        if(!parsed.events.length && !parsed.terminals.length){
+          importStatus.value = { type:'error', message:'未能從 '+f.originalName+' 解析出任何機台資料，請確認指令與檔案內容正確。' };
+          return;
+        }
+        Object.assign(dataset, parsed);
+        expanded.clear();
+        expandedWeeks.clear();
+        Object.keys(forecastPage).forEach(k=>delete forecastPage[k]);
+        forecastShowAll.clear();
+        selectedCategories.value = [];
+        const baseMsg = '已套用 '+f.newName+' 為最新資料：機台 ' + parsed.summary.totalTerminals +
+                        ' 台，換機事件 ' + parsed.summary.totalEvents + ' 筆。';
+        importStatus.value = { type:'success', message: baseMsg };
+      }catch(err){
+        importStatus.value = { type:'error', message:'解析 '+f.originalName+' 失敗：'+err.message };
+      }
+    }
+
     // ---------- upload new git log ----------
     const importStatus = ref(null);
     function onFileUpload(evt){
@@ -2004,6 +2230,8 @@ createApp({
       riskLabel, riskClass, sourceLabel, priorityLabel,
       forcedInput, forcedNote, forcedPriorityList, addForcedTerminals, removeForcedTerminal,
       importStatus, onFileUpload, downloadDatasetJSON, downloadExcel,
+      gitCmdCopied, copyGitCommand, gitDropActive, gitExportFiles, gitExportHistory,
+      onGitExportSelect, onGitExportDrop, downloadGitExportFile, redownloadGitExportHistory, importGitExportFile,
       locationMeta, auditLocationOrder, locationGroup, auditFlags,
       auditDate, auditOperator, auditSearch, auditCategoryFilter, auditLocationFilter, auditOnlyPending,
       auditRecords, getAuditRecord, toggleAuditCheck, updateAuditNote, clearAuditForDate,
