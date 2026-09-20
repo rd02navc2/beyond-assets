@@ -1,26 +1,33 @@
 {
   "terminalId": "23611902",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-09-20 15:58:19",
   "category": "聯合刷卡機",
   "assetDescription": "AS350 PINpad Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "15002",
+  "machineNo": "11149",
   "merchantCode": "1301003669",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724聯合.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0919聯合刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-09-19",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "15002"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "11149"
         }
       ],
-      "remark": "",
+      "remark": "2026年09月19日 Goshop(艾倫包膜)",
       "commitId": ""
     }
   ]
