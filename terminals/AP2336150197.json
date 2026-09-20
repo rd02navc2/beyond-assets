@@ -1,5 +1,6 @@
 {
   "terminalId": "AP2336150197",
+<<<<<<< HEAD
   "sampleMark": "比漾",
   "generatedAt": "2026-09-20 15:12:26",
   "category": "POS",
@@ -28,6 +29,34 @@
         }
       ],
       "remark": "2026年09月20日",
+=======
+  "category": "POS機",
+  "assetDescription": "AP-3615 POS Terminal",
+  "counterNo": "75202",
+  "machineNo": "24731",
+  "merchantCode": null,
+  "assetStatus": "法朋",
+  "warehouseStock": false,
+  "sourceFile": "",
+  "adjustmentHistory": [
+    {
+      "date": "2026-09-10",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "counterNo",
+          "oldValue": "",
+          "newValue": "75202"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "24731"
+        }
+      ],
+      "remark": "進櫃",
+>>>>>>> 689922fd373bec21fc7b71611e8031b6afcf20c8
       "commitId": ""
     }
   ]
