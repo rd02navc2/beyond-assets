@@ -1,26 +1,33 @@
 {
   "terminalId": "23612075",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-09-20 17:39:41",
   "category": "聯合刷卡機",
   "assetDescription": "AS350 PINpad Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "68868",
+  "machineNo": "24609",
   "merchantCode": "1301003669",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724聯合.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0920聯合刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-09-20",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "68868"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "24609"
         }
       ],
-      "remark": "",
+      "remark": "2026年09月20日 TATA",
       "commitId": ""
     }
   ]
