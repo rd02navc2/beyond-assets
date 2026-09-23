@@ -1,31 +1,33 @@
 {
   "terminalId": "64615938",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-09-23 15:10:37",
   "category": "台新刷卡機",
-  "assetDescription": "V3C",
-  "counterNo": "21129",
-  "machineNo": "12211",
-  "merchantCode": "000812660111790",
-  "assetStatus": "Le Polka",
-  "warehouseStock": false,
-  "sourceFile": "",
+  "assetDescription": "AS350 PINpad Terminal",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": "1301003669",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "0910台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-11",
+      "date": "2026-09-10",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "counterNo",
-          "oldValue": "",
-          "newValue": "21129"
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "N/A"
         },
         {
-          "field": "machineNo",
-          "oldValue": "",
-          "newValue": "12211"
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "N/A"
         }
       ],
-      "remark": "進櫃",
+      "remark": "2026年09月10日 5F倉庫",
       "commitId": ""
     }
   ]
