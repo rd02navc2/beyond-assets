@@ -506,6 +506,7 @@
               <div class="meta">
                 <span>{{ t.assetStatus || '—' }}</span>
                 <span v-if="t.warehouseStock" class="tag" style="background:#ece8f7; color:var(--ink-faint);">倉庫庫存</span>
+                <span v-if="replacementExclusionLabel(t)" class="tag" style="background:#fdeee8; color:#b85c6b;" :title="'不列入換機計算：'+replacementExclusionLabel(t)">🚫 {{ replacementExclusionLabel(t) }}（不列入換機計算）</span>
                 <span class="badge-count" :class="{zero: t.changeCount===0}">{{ t.changeCount }} 次換機</span>
               </div>
             </div>
@@ -900,14 +901,17 @@
                         <th>最後同步</th>
                         <th>異常旗標</th>
                         <th>盤點人／時間</th>
-                        <th>備註</th>
+                        <th>異動備註</th>
+                        <th>盤點備註</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr v-for="t in auditGrouped[loc][cat]" :key="t.groupKey"
                           :class="{ 'audit-row-checked': getAuditRecord(t).checked, 'audit-row-flagged': auditFlags(t).length>0 }">
                         <td><input type="checkbox" class="audit-checkbox" :checked="getAuditRecord(t).checked" @change="toggleAuditCheck(t)"></td>
-                        <td class="mono">{{ t.terminalId }}</td>
+                        <td class="mono">{{ t.terminalId }}
+                          <div v-if="replacementExclusionLabel(t)" style="color:#b85c6b; font-size:11px; font-weight:700; margin-top:2px;" :title="'不列入換機計算：'+replacementExclusionLabel(t)">🚫 {{ replacementExclusionLabel(t) }}</div>
+                        </td>
                         <td>{{ t.assetDescription || '—' }}</td>
                         <td class="mono">{{ t.counterNo || '—' }}</td>
                         <td class="mono">{{ t.machineNo || '—' }}</td>
@@ -927,6 +931,7 @@
                           </template>
                           <template v-else>—</template>
                         </td>
+                        <td>{{ latestRemark(t) || '—' }}</td>
                         <td>
                           <input type="text" class="audit-note-input" :value="getAuditRecord(t).note"
                                  @change="updateAuditNote(t, $event.target.value)" placeholder="備註…">
@@ -958,9 +963,9 @@
           <span class="step-num">1</span>
           <div class="step-body">
             <div class="step-title">在有這個 git 倉庫的機器上，執行以下指令</div>
-            <div class="code-block" id="gitCmdBlock">git log -p --unified=1 --no-merges --diff-filter=MD -- terminals/ &gt; out.txt<button class="btn small ghost code-copy-btn" style="color:var(--ink-soft); border-color:var(--border);" @click="copyGitCommand">{{ gitCmdCopied ? '已複製 ✓' : '複製指令' }}</button></div>
+            <div class="code-block" id="gitCmdBlock">git log -p --unified=15 --no-merges -- terminals/ &gt; out15.txt<button class="btn small ghost code-copy-btn" style="color:var(--ink-soft); border-color:var(--border);" @click="copyGitCommand">{{ gitCmdCopied ? '已複製 ✓' : '複製指令' }}</button></div>
             <div class="hint" style="font-size:12px; color:var(--ink-faint); margin-top:6px;">
-              會產生一個 <code class="mono">out.txt</code>，內容是 <code class="mono">terminals/</code> 目錄下所有「修改（M）」與「刪除（D）」異動的 diff（含前後各 1 行上下文，且排除合併提交）。
+              會產生一個 <code class="mono">out15.txt</code>，內容是 <code class="mono">terminals/</code> 目錄下所有異動（含新增、修改、刪除）的 diff（含前後各 15 行上下文，足以完整涵蓋每筆機台 JSON 與備註內容，且排除合併提交）。
             </div>
           </div>
         </div>
@@ -968,14 +973,14 @@
         <div class="step-row">
           <span class="step-num">2</span>
           <div class="step-body" style="width:100%;">
-            <div class="step-title">把產生的 out.txt 拖進來，或點擊選取檔案</div>
+            <div class="step-title">把產生的 out15.txt 拖進來，或點擊選取檔案</div>
             <div class="git-drop"
                  :class="{dragover: gitDropActive}"
                  @click="$refs.gitExportFileInput.click()"
                  @dragover.prevent="gitDropActive=true"
                  @dragleave.prevent="gitDropActive=false"
                  @drop.prevent="onGitExportDrop">
-              <div style="font-size:14px; font-weight:700; color:var(--header);">📄 拖放 out.txt 到這裡，或點擊選取檔案</div>
+              <div style="font-size:14px; font-weight:700; color:var(--header);">📄 拖放 out15.txt 到這裡，或點擊選取檔案</div>
               <div class="hint">支援一次處理多個檔案；每個檔案會各自依處理時間重新命名。</div>
             </div>
             <input ref="gitExportFileInput" type="file" class="visually-hidden" multiple accept=".txt,.log,.diff,text/plain" @change="onGitExportSelect">
@@ -1522,6 +1527,17 @@ createApp({
       return 'other';
     }
 
+    // 取得該機台最近一筆有內容的「備註」（來自 Git Log 異動紀錄的 remark 欄位），
+    // 用於查核比對頁面與換機事件明細，確保備註欄位完整帶入、不遺漏。
+    function latestRemark(t){
+      if(!t) return '';
+      const hist = eventsByTerminal.value[t.terminalId] || [];
+      for(let i=hist.length-1;i>=0;i--){
+        if(hist[i].remark) return hist[i].remark;
+      }
+      return '';
+    }
+
     // 依資料規則自動判定「疑似異常／可能遺失」— 不做人為臆測，只標出資料本身矛盾或空白的情況
     // 註：公用機台（有機號、無櫃號、非倉庫）為正常業務狀態，不算異常。
     function auditFlags(t){
@@ -1596,7 +1612,7 @@ createApp({
         const loc = locationGroup(t);
         if(auditLocationFilter.value && loc !== auditLocationFilter.value) return false;
         if(q){
-          const hay = [t.terminalId,t.category,t.assetDescription,t.counterNo,t.machineNo,t.merchantCode,t.assetStatus,t.groupKey].join(' ').toLowerCase();
+          const hay = [t.terminalId,t.category,t.assetDescription,t.counterNo,t.machineNo,t.merchantCode,t.assetStatus,t.groupKey,latestRemark(t)].join(' ').toLowerCase();
           if(!hay.includes(q)) return false;
         }
         if(auditOnlyPending.value){
@@ -1651,7 +1667,8 @@ createApp({
           '盤點狀態': rec.checked ? '已盤點' : '未盤點',
           '盤點人': rec.by,
           '盤點時間': rec.at,
-          '備註': rec.note,
+          '異動備註': latestRemark(t),
+          '盤點備註': rec.note,
         };
       });
       const ws = XLSX.utils.json_to_sheet(rows.length ? rows : [{'提示':'目前篩選條件下無資料'}]);
@@ -1800,6 +1817,16 @@ createApp({
       });
     });
 
+    // ---------- 除外邏輯：測試機／財務專用機，不列入換機計算，但仍顯示在清點清單（機台清單／稽核）上 ----------
+    const REPLACEMENT_EXCLUSIONS = [
+      { groupKey:'聯合刷卡機_23611911', label:'2F測試機_1' },
+      { groupKey:'台新刷卡機_64615986', label:'2F測試機_2' },
+      { groupKey:'聯合刷卡機_23611885', label:'2F財務專用機' },
+    ];
+    const REPLACEMENT_EXCLUSION_MAP = new Map(REPLACEMENT_EXCLUSIONS.map(e=>[e.groupKey, e.label]));
+    function replacementExclusionLabel(t){ return t ? REPLACEMENT_EXCLUSION_MAP.get(t.groupKey) : undefined; }
+    function isExcludedFromReplacement(t){ return !!replacementExclusionLabel(t); }
+
     // ---------- 優先序① 外部強制通知機台清單（人工登錄，以終端機號為鍵值）----------
     const forcedPriority = reactive({}); // { terminalId: { note, addedAt } }
     const forcedInput = ref('');
@@ -1828,7 +1855,7 @@ createApp({
     // 每台機台的下次換機預測、優先序與故障風險
     const forecastList = computed(()=>{
       const ref_ = referenceDate.value;
-      return dataset.terminals.map(t=>{
+      return dataset.terminals.filter(t=>!isExcludedFromReplacement(t)).map(t=>{
         let standardDays, source, priority, baseDate, predictedDate;
 
         if(forcedPriority[t.terminalId]){
@@ -1969,7 +1996,7 @@ createApp({
     }
 
     // ---------- git log export（重新命名 + 下載） ----------
-    const GIT_EXPORT_COMMAND = 'git log -p --unified=1 --no-merges --diff-filter=MD -- terminals/ > out.txt';
+    const GIT_EXPORT_COMMAND = 'git log -p --unified=15 --no-merges -- terminals/ > out15.txt';
     const gitCmdCopied = ref(false);
     function copyGitCommand(){
       const done = () => { gitCmdCopied.value = true; setTimeout(()=>{ gitCmdCopied.value = false; }, 1800); };
@@ -2229,10 +2256,11 @@ createApp({
       forecastShowAll, toggleForecastShowAll,
       riskLabel, riskClass, sourceLabel, priorityLabel,
       forcedInput, forcedNote, forcedPriorityList, addForcedTerminals, removeForcedTerminal,
+      replacementExclusionLabel, isExcludedFromReplacement,
       importStatus, onFileUpload, downloadDatasetJSON, downloadExcel,
       gitCmdCopied, copyGitCommand, gitDropActive, gitExportFiles, gitExportHistory,
       onGitExportSelect, onGitExportDrop, downloadGitExportFile, redownloadGitExportHistory, importGitExportFile,
-      locationMeta, auditLocationOrder, locationGroup, auditFlags,
+      locationMeta, auditLocationOrder, locationGroup, auditFlags, latestRemark,
       auditDate, auditOperator, auditSearch, auditCategoryFilter, auditLocationFilter, auditOnlyPending,
       auditRecords, getAuditRecord, toggleAuditCheck, updateAuditNote, clearAuditForDate,
       auditFilteredTerminals, auditGrouped, auditSummary, exportAuditExcel,
