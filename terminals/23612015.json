@@ -1,13 +1,13 @@
 {
   "terminalId": "23612015",
-  "category": "台新刷卡機",
-  "assetDescription": "台新刷卡機",
+  "category": "聯合刷卡機",
+  "assetDescription": "聯合刷卡機",
   "counterNo": "50107",
   "machineNo": "23508",
   "merchantCode": "1301003669",
   "assetStatus": "Pierre Cardin",
   "warehouseStock": false,
-  "sourceFile": "20260907台新刷卡機.xlsx",
+  "sourceFile": "20260907聯合刷卡機.xlsx",
   "adjustmentHistory": [
     {
       "date": "2026-09-07",
@@ -15,9 +15,14 @@
       "action": "",
       "changes": [
         {
-          "field": "",
+          "field": "counterNo",
           "oldValue": "",
-          "newValue": ""
+          "newValue": "50107"
+        },
+        {
+          "field": "machineNo",
+          "oldValue": "",
+          "newValue": "23508"
         }
       ],
       "remark": "Pierre Cardin",

@@ -1,13 +1,13 @@
 {
   "terminalId": "64615978",
-  "category": "聯合刷卡機",
+  "category": "台新刷卡機",
   "assetDescription": "V3C",
   "counterNo": null,
   "machineNo": null,
   "merchantCode": "000812660111790",
   "assetStatus": "倉庫備品",
   "warehouseStock": true,
-  "sourceFile": "0912聯合刷卡機.xlsx",
+  "sourceFile": "0912台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
       "date": "2026-09-12",
