@@ -1,33 +1,33 @@
 {
   "terminalId": "64615940",
   "sampleMark": "比漾",
-  "generatedAt": "2026-09-25 16:19:10",
+  "generatedAt": "2026-10-01 16:06:04",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "18121",
+  "machineNo": "11168",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "N/A",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "0930台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-25",
-      "operator": "包安",
+      "date": "2026-10-01",
+      "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
           "oldValue": "N/A",
-          "newValue": "N/A"
+          "newValue": "18121"
         },
         {
           "field": "機台編號 (machineNo)",
           "oldValue": "N/A",
-          "newValue": "N/A"
+          "newValue": "11168"
         }
       ],
-      "remark": "2026年09月25日",
+      "remark": "2026年10月1日 ECSTASY象鼻人",
       "commitId": ""
     }
   ]
