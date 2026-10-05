@@ -1,26 +1,33 @@
 {
   "terminalId": "23611900",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-10-05 10:21:07",
   "category": "聯合刷卡機",
   "assetDescription": "AS350 PINpad Terminal",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "56112",
+  "machineNo": "23575",
   "merchantCode": "1301003669",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724聯合.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "20261004聯合刷卡機",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-10-04",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "56112"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "23575"
         }
       ],
-      "remark": "",
+      "remark": "2026年10月04日 Tefal特福",
       "commitId": ""
     }
   ]
