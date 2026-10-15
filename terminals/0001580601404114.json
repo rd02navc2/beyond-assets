@@ -1,26 +1,33 @@
 {
   "terminalId": "0001580601404114",
-  "category": "悠遊卡刷卡機",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-10-15 13:19:45",
+  "category": "悠遊卡機",
   "assetDescription": "悠遊卡機CMAS",
-  "counterNo": null,
-  "machineNo": null,
-  "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724悠遊卡.xlsx",
+  "counterNo": "70099",
+  "machineNo": "24202",
+  "merchantCode": "N/A",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "20261013悠遊卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-10-13",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "70099"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "24202"
         }
       ],
-      "remark": "",
+      "remark": "2026年10月13日 豆腐村",
       "commitId": ""
     }
   ]

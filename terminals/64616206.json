@@ -1,31 +1,33 @@
 {
   "terminalId": "64616206",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-10-15 12:58:51",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "12023",
-  "machineNo": "11124",
+  "counterNo": "18069",
+  "machineNo": "11140",
   "merchantCode": "000812660111790",
   "assetStatus": "",
   "warehouseStock": false,
-  "sourceFile": "20260808台新刷卡機資產.xlsx",
+  "sourceFile": "20261014台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-09",
-      "operator": "davidchung",
+      "date": "2026-10-14",
+      "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
-          "oldValue": "",
-          "newValue": "12023"
+          "oldValue": "N/A",
+          "newValue": "18069"
         },
         {
           "field": "機台編號 (machineNo)",
-          "oldValue": "",
-          "newValue": "11124"
+          "oldValue": "N/A",
+          "newValue": "11140"
         }
       ],
-      "remark": "",
+      "remark": "2026年10月14日 統一藥品",
       "commitId": ""
     }
   ]

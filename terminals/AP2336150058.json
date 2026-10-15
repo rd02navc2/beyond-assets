@@ -1,26 +1,33 @@
 {
   "terminalId": "AP2336150058",
-  "category": "POS機",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-10-15 14:08:13",
+  "category": "POS",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": "12023",
-  "machineNo": "11124",
-  "merchantCode": null,
-  "assetStatus": "使用中",
+  "counterNo": "18069",
+  "machineNo": "11140",
+  "merchantCode": "N/A",
+  "assetStatus": "",
   "warehouseStock": false,
-  "sourceFile": "20260724POS.xlsx",
+  "sourceFile": "20261013POS.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-10-14",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "18069"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "11140"
         }
       ],
-      "remark": "",
+      "remark": "2026年10月14日 統一藥品",
       "commitId": ""
     }
   ]

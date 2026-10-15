@@ -1,31 +1,33 @@
 {
   "terminalId": "AP2336150086",
-  "category": "POS機",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-10-15 14:07:01",
+  "category": "POS",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": null,
-  "machineNo": null,
-  "merchantCode": null,
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "",
+  "counterNo": "N/A",
+  "machineNo": "24796",
+  "merchantCode": "N/A",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "20261013POS.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-08-31",
+      "date": "2026-10-13",
       "operator": "",
-      "action": "更換",
+      "action": "",
       "changes": [
         {
-          "field": "counterNo",
-          "oldValue": "21135",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "N/A"
         },
         {
-          "field": "machineNo",
-          "oldValue": "12204",
-          "newValue": ""
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "24796"
         }
       ],
-      "remark": "",
+      "remark": "2026年10月13日 金門展1",
       "commitId": ""
     }
   ]

@@ -1,33 +1,33 @@
 {
   "terminalId": "AP2336150057",
   "sampleMark": "比漾",
-  "generatedAt": "2026-09-25 16:16:59",
+  "generatedAt": "2026-10-15 14:05:55",
   "category": "POS",
-  "assetDescription": "POS",
-  "counterNo": null,
-  "machineNo": null,
+  "assetDescription": "AP-3615 POS Terminal",
+  "counterNo": "70099",
+  "machineNo": "24202",
   "merchantCode": "N/A",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "N/A",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "20261013POS.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-25",
-      "operator": "包安",
+      "date": "2026-10-13",
+      "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
           "oldValue": "N/A",
-          "newValue": "N/A"
+          "newValue": "70099"
         },
         {
           "field": "機台編號 (machineNo)",
           "oldValue": "N/A",
-          "newValue": "N/A"
+          "newValue": "24202"
         }
       ],
-      "remark": "2026年09月25日",
+      "remark": "2026年10月13日 豆腐村",
       "commitId": ""
     }
   ]
