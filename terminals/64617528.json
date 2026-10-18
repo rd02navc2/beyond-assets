@@ -1,26 +1,33 @@
 {
   "terminalId": "64617528",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-10-18 17:55:58",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
-  "merchantCode": "000812000119221",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "20260724台新.xlsx",
+  "counterNo": "70025",
+  "machineNo": "24701",
+  "merchantCode": "64617528",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "20261018台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "",
+      "date": "2026-10-18",
       "operator": "",
       "action": "",
       "changes": [
         {
-          "field": "",
-          "oldValue": "",
-          "newValue": ""
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "70025"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "24701"
         }
       ],
-      "remark": "",
+      "remark": "2026年10月18日 美珍香 每月換機",
       "commitId": ""
     }
   ]
