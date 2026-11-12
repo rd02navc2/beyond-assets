@@ -1,0 +1,34 @@
+{
+  "terminalId": "AP2222222222",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-11-09 10:24:50",
+  "category": "POS",
+  "assetDescription": "AP-3615 POS Terminal",
+  "counterNo": null,
+  "machineNo": null,
+  "merchantCode": "1301003669",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20261108_POS.xlsx",
+  "adjustmentHistory": [
+    {
+      "date": "2026-11-08",
+      "operator": "",
+      "action": "",
+      "changes": [
+        {
+          "field": "櫃檯編號 (counterNo)",
+          "oldValue": "N/A",
+          "newValue": "N/A"
+        },
+        {
+          "field": "機台編號 (machineNo)",
+          "oldValue": "N/A",
+          "newValue": "N/A"
+        }
+      ],
+      "remark": "2026年11月08日 倉庫",
+      "commitId": ""
+    }
+  ]
+}

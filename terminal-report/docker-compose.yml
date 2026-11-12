@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    container_name: terminal-report-app
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_HOST:-host.docker.internal}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_NAME: ${DB_NAME:-terminal_report}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_RO_USER: ${DB_RO_USER:-}
+      DB_RO_PASSWORD: ${DB_RO_PASSWORD:-}
+      EXPORT_CLEAR_BEFORE_SAVE: ${EXPORT_CLEAR_BEFORE_SAVE:-true}
+      TZ: Asia/Taipei
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # Docker Desktop 已內建；Linux 主機需要這行
+    ports:
+      - "8089:8080"      # http://192.168.5.46:8089

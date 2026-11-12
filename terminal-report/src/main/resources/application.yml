@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: terminal-report
+
+  datasource:
+    # 連線資訊由環境變數提供（docker-compose 會帶入）；本機開發則使用預設值
+    url: "jdbc:mysql://${DB_HOST:192.168.5.46}:${DB_PORT:3306}/${DB_NAME:terminal_report}?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Taipei&rewriteBatchedStatements=true"
+    username: ${DB_USER:davidchung}
+    password: ${DB_PASSWORD:abcd@1234}
+
+  # 啟動時執行 resources/schema.sql（全部使用 CREATE TABLE IF NOT EXISTS，可重複執行）
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update        # 表結構由 schema.sql 管理；正式環境建議改用 Flyway
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+
+# 網頁「SQL 查詢」功能
+app:
+  query:
+    # 建議建立只有 SELECT 權限的帳號（見 sql/init-mysql.sql）；留空則使用上面的主要帳號
+    username: ${DB_RO_USER:}
+    password: ${DB_RO_PASSWORD:}
+    max-rows: 1000
+    timeout-seconds: 10
+    max-sql-length: 5000
+  export:
+    # true：每次匯出入庫前，先刪除三張匯出資料表的全部舊資料（同一交易內，寫入失敗會還原）
+    # false：保留每次匯出的歷史批次
+    clear-before-save: ${EXPORT_CLEAR_BEFORE_SAVE:true}
+
+logging:
+  level:
+    com.example.terminalreport: INFO
