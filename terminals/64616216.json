@@ -1,33 +1,33 @@
 {
   "terminalId": "64616216",
   "sampleMark": "比漾",
-  "generatedAt": "2026-09-17 14:03:57",
+  "generatedAt": "2026-11-12 15:09:57",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "31103",
-  "machineNo": "31103",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "000812660111790",
-  "assetStatus": "",
-  "warehouseStock": false,
-  "sourceFile": "0916台新刷卡機.xlsx",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20261111台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-16",
+      "date": "2026-11-11",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
           "oldValue": "N/A",
-          "newValue": "31103"
+          "newValue": "N/A"
         },
         {
           "field": "機台編號 (machineNo)",
           "oldValue": "N/A",
-          "newValue": "31103"
+          "newValue": "N/A"
         }
       ],
-      "remark": "2026年09月16日 NIKE",
+      "remark": "2026年11月11日 倉庫",
       "commitId": ""
     }
   ]

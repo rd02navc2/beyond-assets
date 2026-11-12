@@ -1,33 +1,33 @@
 {
   "terminalId": "AP2336150120",
   "sampleMark": "比漾",
-  "generatedAt": "2026-10-01 16:15:09",
-  "category": "POS機",
+  "generatedAt": "2026-11-03 12:01:48",
+  "category": "POS",
   "assetDescription": "AP-3615 POS Terminal",
-  "counterNo": "18121",
-  "machineNo": "11168",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "N/A",
-  "assetStatus": "",
-  "warehouseStock": false,
-  "sourceFile": "0930POS機.xlsx",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20261102撤櫃象鼻人.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-30",
+      "date": "2026-11-02",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
           "oldValue": "N/A",
-          "newValue": "18121"
+          "newValue": "N/A"
         },
         {
           "field": "機台編號 (machineNo)",
           "oldValue": "N/A",
-          "newValue": "11168"
+          "newValue": "N/A"
         }
       ],
-      "remark": "2026年09月30日  ECSTASY象鼻人",
+      "remark": "2026年11月02日 倉庫",
       "commitId": ""
     }
   ]

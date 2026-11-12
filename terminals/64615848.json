@@ -1,33 +1,33 @@
 {
   "terminalId": "64615848",
   "sampleMark": "比漾",
-  "generatedAt": "2026-09-23 13:19:13",
+  "generatedAt": "2026-11-10 12:29:19",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": null,
-  "machineNo": null,
+  "counterNo": "50107",
+  "machineNo": "23508",
   "merchantCode": "000812660111790",
-  "assetStatus": "倉庫備品",
-  "warehouseStock": true,
-  "sourceFile": "0909台新刷卡機.xlsx",
+  "assetStatus": "",
+  "warehouseStock": false,
+  "sourceFile": "20261110台新刷卡機.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-09",
+      "date": "2026-11-10",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
           "oldValue": "N/A",
-          "newValue": "N/A"
+          "newValue": "50107"
         },
         {
           "field": "機台編號 (machineNo)",
           "oldValue": "N/A",
-          "newValue": "N/A"
+          "newValue": "23508"
         }
       ],
-      "remark": "2026年09月09日 5F倉庫",
+      "remark": "2026年11月10日 Pierre cardin",
       "commitId": ""
     }
   ]

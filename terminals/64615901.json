@@ -1,31 +1,33 @@
 {
   "terminalId": "64615901",
+  "sampleMark": "比漾",
+  "generatedAt": "2026-11-09 10:14:52",
   "category": "台新刷卡機",
   "assetDescription": "V3C",
-  "counterNo": "12021",
-  "machineNo": "11147",
+  "counterNo": null,
+  "machineNo": null,
   "merchantCode": "000812660111790",
-  "assetStatus": "",
-  "warehouseStock": false,
-  "sourceFile": "0912台新刷卡機.xlsx",
+  "assetStatus": "倉庫備品",
+  "warehouseStock": true,
+  "sourceFile": "20261108_台新.xlsx",
   "adjustmentHistory": [
     {
-      "date": "2026-09-12",
+      "date": "2026-11-08",
       "operator": "",
       "action": "",
       "changes": [
         {
           "field": "櫃檯編號 (counterNo)",
-          "oldValue": "",
-          "newValue": "12021"
+          "oldValue": "N/A",
+          "newValue": "N/A"
         },
         {
           "field": "機台編號 (machineNo)",
-          "oldValue": "",
-          "newValue": "11147"
+          "oldValue": "N/A",
+          "newValue": "N/A"
         }
       ],
-      "remark": "Roots",
+      "remark": "2026年11月08日 倉庫",
       "commitId": ""
     }
   ]
